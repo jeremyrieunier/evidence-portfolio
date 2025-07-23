@@ -10,6 +10,6 @@ SELECT
   END AS age_group,
   COUNT(*) AS total_bookings,
   ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage
-FROM ${hotel_reservations}
+FROM ${reservations}
 GROUP BY age_group
 ORDER BY age_group

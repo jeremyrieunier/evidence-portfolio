@@ -1,22 +1,22 @@
 ---
 title: Hotel Reservation Analysis
 queries:
-  - hotel_rates.sql
-  - hotel_reservations.sql
-  - hotel_gender_distribution.sql
-  - hotel_gender_rate_preferences.sql
-  - hotel_age_distribution.sql
-  - hotel_age_rate_preferences.sql
-  - hotel_nationality_distribution.sql
-  - hotel_nationality_rate_preferences.sql
-  - hotel_business_segment_distribution.sql
-  - hotel_business_segment_rate_preferences.sql
-  - hotel_online_checkin_overall.sql
-  - hotel_online_checkin_by_business_segment.sql
-  - hotel_online_checkin_by_gender.sql
-  - hotel_online_checkin_by_weekday.sql
-  - hotel_revenue_per_capacity_by_gender.sql
-  - hotel_revenue_per_capacity_by_gender_business.sql
+  - rates.sql
+  - reservations.sql
+  - hotel/gender_distribution.sql
+  - hotel/gender_rate_preferences.sql
+  - hotel/age_distribution.sql
+  - hotel/age_rate_preferences.sql
+  - hotel/nationality_distribution.sql
+  - hotel/nationality_rate_preferences.sql
+  - hotel/business_segment_distribution.sql
+  - hotel/business_segment_rate_preferences.sql
+  - hotel/online_checkin_overall.sql
+  - hotel/online_checkin_by_business_segment.sql
+  - hotel/online_checkin_by_gender.sql
+  - hotel/online_checkin_by_weekday.sql
+  - hotel/revenue_per_capacity_by_gender.sql
+  - hotel/revenue_per_capacity_by_gender_business.sql
 ---
 
 # 🎯 Business Problem
@@ -86,6 +86,29 @@ Our hotel serves a male-dominated customer base with significant unknown demogra
 
 Male guests prioritize flexibility, while female guests show more price sensitivity. Unknown guests follow entirely different booking patterns, likely representing corporate or agent bookings rather than individual travelers.
 
+<Details title="SQL query used for the rate preferences by gender">
+
+```sql
+SELECT
+  CASE
+    WHEN gender = 0 THEN 'Unknown'
+    WHEN gender = 1 THEN 'Male'
+    WHEN gender = 2 THEN 'Female'
+  END AS gender,
+  r.rate_name AS booking_rate,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY gender), 4) AS percentage_within_gender,
+  DENSE_RANK() OVER (PARTITION BY gender ORDER BY COUNT(*) DESC) AS rank
+FROM ${reservations} res
+JOIN ${rates} r
+  ON res.rate_id = r.rate_id
+GROUP BY gender, booking_rate
+ORDER BY gender DESC, rank
+```
+
+</Details>
+
+
 **Male Guests - Flexibility Focused**
 - Fully Flexible rate dominates at 58.15% of male bookings
 - Clear preference for maximum booking flexibility over discounts
@@ -123,6 +146,28 @@ Male guests prioritize flexibility, while female guests show more price sensitiv
   <Column id=percentage fmt=pct2 />
 </DataTable>
 
+<Details title="SQL query used for the age group distribution analysis">
+
+```sql
+SELECT
+  CASE
+    WHEN age_group = 0 THEN 'Unknown'
+    WHEN age_group = 25 THEN '0-25'
+    WHEN age_group = 35 THEN '25-35'
+    WHEN age_group = 45 THEN '35-45'
+    WHEN age_group = 55 THEN '45-55'
+    WHEN age_group = 65 THEN '55-65'
+    WHEN age_group = 100 THEN '> 65'
+  END AS age_group,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage
+FROM ${reservations}
+GROUP BY age_group
+ORDER BY age_group
+```
+
+</Details>
+
 ### Rate Preferences by Age
 
 <Heatmap 
@@ -134,6 +179,33 @@ Male guests prioritize flexibility, while female guests show more price sensitiv
 />
 
 While all age groups prioritize flexibility, younger travelers show highest price sensitivity, while older travelers prefer advance planning discounts. However, the large proportion of unknown age data (60.78%) limits the reliability of these insights for business decision-making.
+
+<Details title="SQL query used for the rate preferences by age">
+
+```sql
+SELECT
+  CASE
+    WHEN res.age_group = 0 THEN 'Unknowm'
+    WHEN res.age_group = 25 THEN '0-25'
+    WHEN res.age_group = 35 THEN '25-35'
+    WHEN res.age_group = 45 THEN '35-45'
+    WHEN res.age_group = 55 THEN '45-55'
+    WHEN res.age_group = 65 THEN '55-65'
+    WHEN res.age_group = 100 THEN '> 65'
+  END AS age_group,
+  r.rate_name AS booking_rate,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY res.age_group), 4)  percentage_within_age_group,
+  DENSE_RANK() OVER (PARTITION BY res.age_group ORDER BY COUNT(*) DESC) AS rank
+FROM ${reservations} res
+JOIN ${rates} r
+  ON res.rate_id = r.rate_id
+GROUP BY res.age_group, booking_rate 
+ORDER BY res.age_group, rank
+```
+
+</Details>
+
 
 **Consistent Flexibility Preference Across All Ages**
 - All age groups prefer Fully Flexible rates (44-55% within each group)
@@ -168,6 +240,25 @@ Our hotel attracts a diverse international clientele, though 43.82% have unknown
   <Column id=percentage fmt=pct2 />
 </DataTable>
 
+<Details title="SQL query used for the nationality distribution analysis">
+
+```sql
+SELECT
+  CASE
+    WHEN nationality_code = 'NULL' THEN 'Unknown'
+    ELSE nationality_code
+  END AS nationality_code,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage
+FROM ${reservations}
+GROUP BY nationality_code
+ORDER BY total_bookings DESC
+LIMIT 10
+```
+
+</Details>
+
+
 ### Rate Preferences by Nationality
 
 <Heatmap 
@@ -179,6 +270,32 @@ Our hotel attracts a diverse international clientele, though 43.82% have unknown
 />
 
 With 43.82% unknown nationality data and several countries having small sample sizes (46-72 bookings), insights for smaller markets should be considered preliminary. Business decisions should focus on the larger markets (US, GB and DE).
+
+<Details title="SQL query used for the rate preferences by nationality">
+
+```sql
+WITH nationalities_above_40_booking AS (
+  SELECT nationality_code
+  FROM ${reservations}
+  GROUP BY nationality_code
+  HAVING COUNT(*) > 40
+)
+SELECT
+  res.nationality_code,
+  r.rate_name AS booking_rate,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY res.nationality_code), 4) AS percentage_within_nationality,
+  DENSE_RANK() OVER (PARTITION BY res.nationality_code ORDER BY COUNT(*) DESC) AS rank
+FROM ${reservations} res
+JOIN ${rates} r
+  ON res.rate_id = r.rate_id
+JOIN nationalities_above_40_booking n
+  ON res.nationality_code = n.nationality_code
+GROUP BY res.nationality_code, booking_rate
+ORDER BY SUM(COUNT(*)) OVER(PARTITION BY res.nationality_code) DESC, rank
+```
+
+</Details>
 
 **European Guests -  Flexibility Seekers**
 - German guests lead flexibility preference at 71.43% Fully Flexible (154 bookings)
@@ -212,6 +329,20 @@ Business segments are relatively balanced across our hotel's distribution channe
   <Column id=percentage fmt=pct2 />
 </DataTable>
 
+<Details title="SQL query used for the business segment distribution">
+
+```sql
+SELECT
+  business_segment,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage
+FROM ${reservations}
+GROUP BY business_segment
+ORDER BY total_bookings DESC
+```
+
+</Details>
+
 ### Rate Preferences by Business Segment
 
 <Heatmap 
@@ -227,6 +358,25 @@ Business segments are relatively balanced across our hotel's distribution channe
 - Corporate segments balance flexibility with advance planning
 - Leisure travelers show most diverse booking patterns
 
+<Details title="SQL query used for the rate preferences by business segment">
+
+```sql
+SELECT
+  res.business_segment,
+  r.rate_name AS booking_rate,
+  COUNT(*) AS total_bookings,
+  ROUND(COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY res.business_segment), 4) AS percentage_within_age_group,
+  DENSE_RANK() OVER (PARTITION BY res.business_segment ORDER BY COUNT(*) DESC) AS rank
+FROM ${reservations} res
+JOIN ${rates} r
+  ON res.rate_id = r.rate_id
+GROUP BY res.business_segment, booking_rate 
+ORDER BY res.business_segment, rank
+```
+
+</Details>
+
+
 ________
 
 # Online Check-in Analysis
@@ -238,6 +388,18 @@ Online check-in adoption is critically low at just 5.92%, indicating significant
   <Column id=online_checkins />
   <Column id=online_checkins_rate fmt=pct2 />
 </DataTable>
+
+<Details title="SQL query used for the overall online check-in analysis">
+
+```sql
+SELECT 
+  COUNT(*) AS total_booking,
+  SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) AS online_checkins,
+  ROUND(SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) / COUNT(*), 4) AS online_checkins_rate
+FROM ${reservations}
+```
+
+</Details>
 
 ## By Business Segment
 
@@ -269,6 +431,22 @@ Online check-in adoption is critically low at just 5.92%, indicating significant
 - FIT: 0.97% online check-in rate (516 total bookings) - surprisingly lowest
 - Film: 0% online check-in rate (55 total bookings)
 
+<Details title="SQL query used for the  online check-in analysis by business segment">
+
+```sql
+SELECT
+  business_segment,
+  COUNT(*) as total_booking,
+  SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) AS online_checkins,
+  ROUND(SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) / COUNT(*), 4) AS online_checkin_rate
+FROM ${reservations}
+GROUP BY business_segment
+ORDER BY total_booking DESC
+```
+
+</Details>
+
+
 ## By Gender
 There's a consistent low adoption accross genders:
 
@@ -291,6 +469,26 @@ There's a consistent low adoption accross genders:
 </DataTable>
 
 Unknown guests never use online check-in, likely representing corporate bookings or travel agent reservations where end guests handle their own check-in.
+
+<Details title="SQL query used for the online check-in analysis by gender">
+
+```sql
+SELECT
+  CASE
+    WHEN gender = 0 THEN 'Unknown'
+    WHEN gender = 1 THEN 'Male'
+    WHEN gender = 2 THEN 'Female'
+  END AS gender,
+  COUNT(*) AS total_booking,
+  SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) AS online_checkins,
+  ROUND(SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) / COUNT(*), 4) AS online_checkin_rate
+FROM ${reservations}
+GROUP BY gender
+ORDER BY total_booking DESC
+```
+
+</Details>
+
 
 ## Online Check-in by Weekday
 Saturday shows the highest online check-in adoption rate at 12.33%, though this is based on a small denominator of only 146 total bookings.
@@ -319,6 +517,22 @@ The small denominator (148 total online check-ins) makes detailed analysis unrel
 - Daily variations likely represent statistical noise rather than meaningful patterns
 - Not enough data for confident business decisions
 
+<Details title="SQL query used for the online check-in analysis by weekday">
+
+```sql
+SELECT
+  DAYOFWEEK(created_utc) AS day_num,
+  DAYNAME(created_utc) AS weekday,
+  COUNT(*) AS total_booking,
+  ROUND(SUM(CASE WHEN is_online_checkin = 1 THEN 1 ELSE 0 END) / COUNT(*), 4) AS online_checkin_rate
+FROM ${reservations}
+GROUP BY day_num, weekday
+ORDER BY day_num
+```
+
+</Details>
+
+
 _______
 
 # Average Night Revenue per Occupied Capacity Analysis
@@ -339,6 +553,27 @@ This metric provides the average night revenue per single occupied capacity unit
 
 While female guests show the highest revenue per capacity, they represent only 14.4% of total bookings (360 out of 2,501), making this the smallest size among the 3 gender segments. Male guests drive volume with 51.8% of bookings, while Unknown guests represent 33.8% with significantly lower profitability.
 
+<Details title="SQL query used for the average night revenue per occupied capacity analysis by gender">
+
+```sql
+SELECT 
+    CASE
+      WHEN gender = 1 THEN 'Male'
+      WHEN gender = 2 THEN 'Female'
+      WHEN gender = 0 THEN 'Unknown'
+    END AS gender,    
+    ROUND(AVG((night_cost_sum / night_count) / (occupied_space_sum)), 2) AS avg_night_revenue_per_occupied_capacity,
+    COUNT(*) AS total_booking,
+    ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage_booking,
+    SUM(night_cost_sum) AS total_revenue
+FROM ${reservations}
+GROUP BY gender, 
+ORDER BY avg_night_revenue_per_occupied_capacity DESC;
+```
+
+</Details>
+
+
 ## Cross-Segment Analysis: Gender × Business Segment
 
 <BubbleChart 
@@ -356,6 +591,27 @@ While female guests show the highest revenue per capacity, they represent only 1
  - Male OTAs and Male OTA Nette appear as the largest bubbles in the high-volume, high-profitability quadrant.
  - Female guests consistently outperform across all business segments despite representing smaller booking volumes.
  - Unknown segments systematically underperform, particularly in FIT and Film channels.
+
+<Details title="SQL query used for the cross-segment analysis">
+
+```sql
+SELECT 
+   CASE 
+      WHEN gender = 1 THEN 'Male' 
+      WHEN gender = 2 THEN 'Female' 
+      WHEN gender = 0 THEN 'Unknown'
+   END || ' ' || business_segment AS gender_business_segment,
+   COUNT(*) AS total_bookings,
+   ROUND(AVG((night_cost_sum / night_count) / (occupied_space_sum)), 2) AS avg_night_revenue_per_occupied_capacity,
+   ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage_booking,
+   ROUND(SUM(night_cost_sum), 2) AS total_revenue
+FROM ${reservations}
+WHERE occupied_space_sum > 0 AND night_count > 0
+GROUP BY gender_business_segment
+ORDER BY avg_night_revenue_per_occupied_capacity DESC
+```
+
+</Details>
 
 
 ### Most Profitable Guest Segments

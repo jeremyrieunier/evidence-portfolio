@@ -8,6 +8,6 @@ SELECT
     COUNT(*) AS total_booking,
     ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage_booking,
     SUM(night_cost_sum) AS total_revenue
-FROM ${hotel_reservations}
+FROM ${reservations}
 GROUP BY gender, 
 ORDER BY avg_night_revenue_per_occupied_capacity DESC;

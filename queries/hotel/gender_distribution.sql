@@ -6,6 +6,6 @@ SELECT
   END AS gender,
   COUNT(*) AS total_bookings,
   ROUND(COUNT(*) / SUM(COUNT(*)) OVER(), 4) AS percentage
-FROM ${hotel_reservations}
+FROM ${reservations}
 GROUP BY gender
 ORDER BY total_bookings DESC

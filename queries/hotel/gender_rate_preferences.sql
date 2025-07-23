@@ -8,8 +8,8 @@ SELECT
   COUNT(*) AS total_bookings,
   ROUND(COUNT(*) / SUM(COUNT(*)) OVER(PARTITION BY gender), 4) AS percentage_within_gender,
   DENSE_RANK() OVER (PARTITION BY gender ORDER BY COUNT(*) DESC) AS rank
-FROM ${hotel_reservations} res
-JOIN ${hotel_rates} r
+FROM ${reservations} res
+JOIN ${rates} r
   ON res.rate_id = r.rate_id
 GROUP BY gender, booking_rate
 ORDER BY gender DESC, rank
