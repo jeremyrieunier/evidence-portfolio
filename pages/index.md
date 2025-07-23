@@ -6,6 +6,7 @@ hide_title: true
 
 # Hi 👋 I'm Jeremy
 
+
 I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
 ## Experience

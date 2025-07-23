@@ -1,62 +1,90 @@
 appearance:
-  default: system
-  switcher: true
+  default: dark
+  switcher: false
 
+  # Desert theme
 theme:
   colorPalettes:
     default:
-      light:
-        - "#236aa4"
-        - "#45a1bf"
-        - "#a5cdee"
-        - "#8dacbf"
-        - "#85c7c6"
-        - "#d2c6ac"
-        - "#f4b548"
-        - "#8f3d56"
-        - "#71b9f4"
-        - "#46a485"
-      dark:
-        - "#236aa4"
-        - "#45a1bf"
-        - "#a5cdee"
-        - "#8dacbf"
-        - "#85c7c6"
-        - "#d2c6ac"
-        - "#f4b548"
-        - "#8f3d56"
-        - "#71b9f4"
-        - "#46a485"
-  colorScales:
-    default:
-      light:
-        - "#ADD8E6"
-        - "#00008B"
-      dark:
-        - "#ADD8E6"
-        - "#00008B"
+      - "#8b4513"  # Saddle Brown
+      - "#a0522d"  # Sienna 
+      - "#d2691e"  # Chocolate
+      - "#cd853f"  # Peru
+      - "#d2b48c"  # Tan
+      - "#deb887"  # Burlywood
+      - "#f4a460"  # Sandy Brown
+      - "#f5deb3"  # Wheat
+      - "#ffdead"  # Navajo White
+      - "#ffe4c4"  # Bisque
   colors:
     primary:
-      light: "#2563eb"
-      dark: "#3b82f6"
+      light: "#8b4513"  # Saddle Brown
+      dark: "#deb887"  # Burlywood
     accent:
-      light: "#c2410c"
-      dark: "#fdba74"
+      light: "#cd853f"  # Peru
+      dark: "#8b4513"  # Saddle Brown
     base:
-      light: "#ffffff"
-      dark: "#09090b"
+      light: "#fff5ee"  # Seashell
+      dark: "#1a1410"  # Night Desert
     info:
-      light: "#0284c7"
-      dark: "#38bdf8"
-    positive:
-      light: "#16a34a"
-      dark: "#4ade80"
-    warning:
-      light: "#f8c900"
-      dark: "#fbbf24"
-    negative:
-      light: "#dc2626"
-      dark: "#f87171"
+      light: "#cd3f3f"  # Salmon
+      dark: "#ffe4c4"  # Bisque
+
+# theme:
+#   colorPalettes:
+#     default:
+#       light:
+#         - "#236aa4"
+#         - "#45a1bf"
+#         - "#a5cdee"
+#         - "#8dacbf"
+#         - "#85c7c6"
+#         - "#d2c6ac"
+#         - "#f4b548"
+#         - "#8f3d56"
+#         - "#71b9f4"
+#         - "#46a485"
+#       dark:
+#         - "#236aa4"
+#         - "#45a1bf"
+#         - "#a5cdee"
+#         - "#8dacbf"
+#         - "#85c7c6"
+#         - "#d2c6ac"
+#         - "#f4b548"
+#         - "#8f3d56"
+#         - "#71b9f4"
+#         - "#46a485"
+#   colorScales:
+#     default:
+#       light:
+#         - "#ADD8E6"
+#         - "#00008B"
+#       dark:
+#         - "#ADD8E6"
+#         - "#00008B"
+#   colors:
+#     primary:
+#       light: "#2563eb"
+#       dark: "#3b82f6"
+#     accent:
+#       light: "#c2410c"
+#       dark: "#fdba74"
+#     base:
+#       light: "#ffffff"
+#       dark: "#09090b"
+#     info:
+#       light: "#0284c7"
+#       dark: "#38bdf8"
+#     positive:
+#       light: "#16a34a"
+#       dark: "#4ade80"
+#     warning:
+#       light: "#f8c900"
+#       dark: "#fbbf24"
+#     negative:
+#       light: "#dc2626"
+#       dark: "#f87171"
 
 plugins:
   components:
