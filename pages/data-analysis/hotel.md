@@ -29,35 +29,13 @@ Key questions included:
 
 # 📊 Data Schema
 ## Rates Dataset
-| **Column** | **Data Type** | **Description** |
-|--------|-----------|-------------|
-| rate_id | UUID | Primary key, unique identifier for each rate type |
-| rate_name | VARCHAR | Full descriptive rate name |
-| short_rate_name | VARCHAR | Abbreviated rate name for analysis  |
-| settlement_action | INT | Rate settlement behavior indicator |
-| settlement_trigger | INT | Trigger condition for rate settlement |
-| settlement_value | DECIMAL | Settlement calculation value |
-| settlement_type | INT | Type classification for settlement processing |
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">UUID</td> <td class="markdown">Primary key, unique identifier for each rate type</td></tr> <tr class="markdown"><td class="markdown">rate_name</td> <td class="markdown">VARCHAR</td> <td class="markdown">Full descriptive rate name</td></tr> <tr class="markdown"><td class="markdown">short_rate_name</td> <td class="markdown">VARCHAR</td> <td class="markdown">Abbreviated rate name for analysis</td></tr> <tr class="markdown"><td class="markdown">settlement_action</td> <td class="markdown">INT</td> <td class="markdown">Rate settlement behavior indicator</td></tr> <tr class="markdown"><td class="markdown">settlement_trigger</td> <td class="markdown">INT</td> <td class="markdown">Trigger condition for rate settlement</td></tr> <tr class="markdown"><td class="markdown">settlement_value</td> <td class="markdown">DECIMAL</td> <td class="markdown">Settlement calculation value</td></tr> <tr class="markdown"><td class="markdown">settlement_type</td> <td class="markdown">INT</td> <td class="markdown">Type classification for settlement processing</td></tr></tbody></table>
 
 ## Reservations Dataset  
-| **Column** | **Data Type** | **Description** |
-|--------|-----------|-------------|
-| start_utc | TIMESTAMP | Reservation start date/time |
-| end_utc | TIMESTAMP | Reservation end date/time |
-| created_utc | TIMESTAMP | Booking creation timestamp |
-| night_count | INT | Total nights booked |
-| night_cost_sum | DECIMAL | Total revenue for stay |
-| occupied_space_sum | INT | Total capacity units occupied |
-| guest_count_sum | INT | Total number of guests |
-| rate_id | UUID | Foreign key linking to rates table |
-| gender | INT | Guest gender (1=Male, 2=Female, 0/NULL=Unknown) |
-| age_group | INT | Guest age category (0=Unknown, 25=25-35, etc.) |
-| nationality_code | VARCHAR | ISO country code |
-| business_segment | VARCHAR | Distribution channel (ie "OTAs", "Leisure", "Direct Business") |
-| is_online_checkin | BOOLEAN | Online check-in usage flag |
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">start_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation start date/time</td></tr> <tr class="markdown"><td class="markdown">end_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation end date/time</td></tr> <tr class="markdown"><td class="markdown">created_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Booking creation timestamp</td></tr> <tr class="markdown"><td class="markdown">night_count</td> <td class="markdown">INT</td> <td class="markdown">Total nights booked</td></tr> <tr class="markdown"><td class="markdown">night_cost_sum</td> <td class="markdown">DECIMAL</td> <td class="markdown">Total revenue for stay</td></tr> <tr class="markdown"><td class="markdown">occupied_space_sum</td> <td class="markdown">INT</td> <td class="markdown">Total capacity units occupied</td></tr> <tr class="markdown"><td class="markdown">guest_count_sum</td> <td class="markdown">INT</td> <td class="markdown">Total number of guests</td></tr> <tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">UUID</td> <td class="markdown">Foreign key linking to rates table</td></tr> <tr class="markdown"><td class="markdown">gender</td> <td class="markdown">INT</td> <td class="markdown">Guest gender (1=Male, 2=Female, 0/NULL=Unknown)</td></tr> <tr class="markdown"><td class="markdown">age_group</td> <td class="markdown">INT</td> <td class="markdown">Guest age category (0=Unknown, 25=25-35, etc.)</td></tr> <tr class="markdown"><td class="markdown">nationality_code</td> <td class="markdown">VARCHAR</td> <td class="markdown">ISO country code</td></tr> <tr class="markdown"><td class="markdown">business_segment</td> <td class="markdown">VARCHAR</td> <td class="markdown">Distribution channel (ie "OTAs", "Leisure", "Direct Business")</td></tr> <tr class="markdown"><td class="markdown">is_online_checkin</td> <td class="markdown">BOOLEAN</td> <td class="markdown">Online check-in usage flag</td></tr></tbody></table>
 
 
-# 💡 Executive Summary
+# Executive Summary
 ## Booking Rate Preferences
 - Male guests prioritize flexibility (58% choose Fully Flexible rates)
 - Female guests are more price-conscious (higher non-refundable rate adoption)
