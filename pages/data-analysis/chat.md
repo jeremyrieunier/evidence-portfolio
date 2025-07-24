@@ -7,7 +7,7 @@ queries:
   - booking: chat/booking_metrics.sql
 ---
 
-# 🎯 Business Challenge
+# 🎯 Business Problem
 A leading healthcare technology platform needed to evaluate the impact of their newly launched chat feature that enables direct communication between healthcare providers and patients.
 
 The feature was designed to:
@@ -17,51 +17,34 @@ The feature was designed to:
 - Increase platform value proposition and reduce provider churn
 
 Key questions included:
+- How should we define a North Star metric to track feature success?
 - What are current usage patterns and adoption rates?
 - Does the feature deliver measurable value to healthcare providers?
 - What are the main barriers to user engagement?
 - Where are the biggest growth opportunities?
 
-Data Schema
+# 📊 Data Schema
 
-### Doctors Dataset
-
-| Column | Data Type | Description |
-|--------|-----------|-------------|
-| doctor_id | VARCHAR | Unique doctor identifier |
-| doctor_specialization | VARCHAR | Medical specialty (e.g., acupuncture, cardiology) |
-| doctor_type | VARCHAR | Doctor classification (paramedical, medical) |
-| became_customer_date | DATE | Platform registration date |
-| country_code | VARCHAR | Geographic market (br, mx) |
-| week | DATE | Analysis week |
-| bookings | INT | Weekly appointment bookings received |
-| days_with_session | INT | Platform engagement days per week |
-
-### Messages Dataset
-| Column | Data Type | Description |
-|--------|-----------|-------------|
-| doctor_id | VARCHAR | Doctor identifier |
-| patient_id | VARCHAR | Patient identifier |
-| sender | VARCHAR | Message sender (doctor/patient) |
-| message_status | VARCHAR | Read/not_read status |
-| message_type | VARCHAR | Content type (text, file, etc.) |
-| week | DATE | Message week |
-| country_code | VARCHAR | Geographic market (br, mx) |
+## Doctors Dataset
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">doctor_id</td> <td class="markdown">VARCHAR</td> <td class="markdown">Unique doctor identifier</td></tr> <tr class="markdown"><td class="markdown">doctor_specialization</td> <td class="markdown">VARCHAR</td> <td class="markdown">Medical specialty</td></tr> <tr class="markdown"><td class="markdown">doctor_type</td> <td class="markdown">VARCHAR</td> <td class="markdown">Doctor classification (paramedical, medical)</td></tr> <tr class="markdown"><td class="markdown">became_customer_date</td> <td class="markdown">DATE</td> <td class="markdown">Platform registration date</td></tr> <tr class="markdown"><td class="markdown">country_code</td> <td class="markdown">VARCHAR</td> <td class="markdown">Geographic market</td></tr> <tr class="markdown"><td class="markdown">week</td> <td class="markdown">DATE</td> <td class="markdown">Analysis week</td></tr> <tr class="markdown"><td class="markdown">bookings</td> <td class="markdown">INT</td> <td class="markdown">Weekly appointment bookings received</td></tr> <tr class="markdown"><td class="markdown">days_with_session</td> <td class="markdown">INT</td> <td class="markdown">Platform engagement days per week</td></tr></tbody></table>
 
 
+## Messages Dataset
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">doctor_id</td> <td class="markdown">VARCHAR</td> <td class="markdown">Doctor identifier</td></tr> <tr class="markdown"><td class="markdown">patient_id</td> <td class="markdown">VARCHAR</td> <td class="markdown">Patient identifier</td></tr> <tr class="markdown"><td class="markdown">sender</td> <td class="markdown">VARCHAR</td> <td class="markdown">Message sender (doctor/patient)</td></tr> <tr class="markdown"><td class="markdown">message_status</td> <td class="markdown">VARCHAR</td> <td class="markdown">Read/not_read status</td></tr> <tr class="markdown"><td class="markdown">message_type</td> <td class="markdown">VARCHAR</td> <td class="markdown">Content type (text, file, etc.)</td></tr> <tr class="markdown"><td class="markdown">week</td> <td class="markdown">DATE</td> <td class="markdown">Message week</td></tr> <tr class="markdown"><td class="markdown">country_code</td> <td class="markdown">VARCHAR</td> <td class="markdown">Geographic market (br, mx)</td></tr></tbody></table>
 
-# ⭐ North Star Metric: Messages Sent by Doctor and Read by Patient per Week
-Our primary metric focuses on successful communication: messages that doctors send and patients actually read.
 
-This metric was chosen because it captures both doctor and patien engagement - critical factors for the feature's success.
+# North Star Metric: Messages Sent by Doctor and Read by Patient per Week
+This metric focuses on successful communication: messages that doctors send and patients actually read.
+
+This metric was chosen because it captures both doctor and patien engagement - critical factors for the feature's success. It measures actual successful communication rather than just activity, ensuring we track meaningful interactions that drive business value.
 
 The analysis of  the first 10 weeks of 2021 shows that the chat feature is facilitating meaningful communication between doctors and patients, with volumes trending positively:
 
 <BarChart 
     data={nsm}
     x=week
-    y=⭐_doctor_messages_read_by_patients
-    y2=⭐_wow_growth
+    y=nsm_doctor_messages_read_by_patients
+    y2=nsm_wow_growth
     y2SeriesType=line
     y2Fmt=pct
     lineWidth=15
@@ -71,8 +54,8 @@ The analysis of  the first 10 weeks of 2021 shows that the chat feature is facil
 
 <DataTable data={nsm} >
   <Column id=week />
-  <Column id=⭐_doctor_messages_read_by_patients />
-  <Column id=⭐_wow_growth fmt=pct />
+  <Column id=nsm_doctor_messages_read_by_patients />
+  <Column id=nsm_wow_growth fmt=pct />
   <Column id=doctor_messages_not_read />
   <Column id=total_messages_sent_by_doctor />
   <Column id=avg_messages_sent_per_doctor />
@@ -98,7 +81,7 @@ There's however a communication gap: approximately **25-29% of messages sent by 
     
 />
 
-<Details title="SQL query used">
+<Details title="SQL query used for thr north star metric analysis">
 
 ```sql
 WITH messages_from_doctors AS (
@@ -114,8 +97,9 @@ WITH messages_from_doctors AS (
 
 SELECT
   week,
-  SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END) AS ⭐_doctor_messages_read_by_patients,
-  ROUND((SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END) - LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week)) / LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week), 2) AS ⭐_wow_growth,
+  SUM(
+    CASE WHEN message_status = 'read'THEN message_count ELSE 0 END) AS nsm_doctor_messages_read_by_patients,
+  ROUND((SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END) - LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week)) / LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week), 2) AS nsm_wow_growth,
   SUM(CASE WHEN message_status = 'not read' THEN message_count ELSE 0 END) AS doctor_messages_not_read,
   SUM(message_count) AS total_messages_sent_by_doctor,
   SUM(message_count) / COUNT(DISTINCT doctor_composite_id) AS avg_messages_sent_per_doctor,
@@ -153,7 +137,7 @@ Analysis of weekly chat usage reveals that while the feature has gained traction
 
 To better understand usage patterns, we'll next examine how chat adoption varies across different doctor specializations, which will help identify targeted growth opportunities.
 
-<Details title="SQL query used">
+<Details title="SQL query used for the feature adoption analysis">
 
 ```sql
 WITH all_doctors AS (
@@ -248,7 +232,7 @@ Several specializations with significant doctor numbers show below-average chat 
 - **Orthopedics**: 60.7% usage, 1.71 bookings/doctor (1,772 doctors)
 - **Ophthalmology**: 56.5% usage, 1.95 bookings/doctor (1,606 doctors)
 
-<Details title="SQL query used">
+<Details title="SQL query used for the chat adoption analysis by specialization">
 
 ```sql
 WITH all_doctors AS (
@@ -298,7 +282,7 @@ Our analysis reveals a striking correlation between chat feature usage and booki
   <Column id=total_bookings />
 </DataTable>
 
-<Details title="SQL query used">
+<Details title="SQL query used the business value analysis">
 
 ```sql 
 WITH booking_metrics AS (

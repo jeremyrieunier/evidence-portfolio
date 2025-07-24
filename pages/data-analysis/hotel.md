@@ -20,31 +20,27 @@ queries:
 ---
 
 # 🎯 Business Problem
-A hotel management company needed insights into customer booking behavior to optimize revenue and improve digital services. Key questions included:
+A hotel management company needed insights into customer booking behavior to optimize revenue and improve digital services.
 
+Key questions included:
 - Which booking rates do different customer segments prefer?
 - What drives online check-in adoption?
 - Which guest segments generate the highest revenue per occupied space?
 
-# 📊 Dataset
-Reservations: 2,501 booking records with customer demographics, booking details, and revenue data
-Rates: 9 different rate types from flexible to restricted options
-
-## Data Schema
-
-### Rates Table
-| Column | Data Type | Description |
+# 📊 Data Schema
+## Rates Dataset
+| **Column** | **Data Type** | **Description** |
 |--------|-----------|-------------|
 | rate_id | UUID | Primary key, unique identifier for each rate type |
-| rate_name | VARCHAR | Full descriptive name (e.g., "Fully Flexible", "Non Refundable BAR BB") |
-| short_rate_name | VARCHAR | Abbreviated name for analysis (e.g., "FF", "NonRefBARBB") |
+| rate_name | VARCHAR | Full descriptive rate name |
+| short_rate_name | VARCHAR | Abbreviated rate name for analysis  |
 | settlement_action | INT | Rate settlement behavior indicator |
 | settlement_trigger | INT | Trigger condition for rate settlement |
 | settlement_value | DECIMAL | Settlement calculation value |
 | settlement_type | INT | Type classification for settlement processing |
 
-### Reservations Table  
-| Column | Data Type | Description |
+## Reservations Dataset  
+| **Column** | **Data Type** | **Description** |
 |--------|-----------|-------------|
 | start_utc | TIMESTAMP | Reservation start date/time |
 | end_utc | TIMESTAMP | Reservation end date/time |
