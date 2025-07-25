@@ -17,10 +17,7 @@ A leading global workforce management platform experienced concerning retention 
 - How is revenue expansion from existing customers being impacted?
 - What external factors correlate with the retention decline?
 
-A leading healthcare technology platform needed to evaluate the impact of their newly launched chat feature that enables direct communication between healthcare providers and patients.
-
 # Data Schema
-
 ## customer_monthly_revenue data table
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">month</td> <td class="markdown">DATE</td> <td class="markdown">Revenue month</td></tr> <tr class="markdown"><td class="markdown">customer_id</td> <td class="markdown">INT</td> <td class="markdown">Unique customer identifier</td></tr> <tr class="markdown"><td class="markdown">service_id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">contracts</td> <td class="markdown">INT</td> <td class="markdown">Active service contracts count</td></tr> <tr class="markdown"><td class="markdown">total_saas_revenue_usd</td> <td class="markdown">FLOAT</td> <td class="markdown">Monthly SaaS revenue per service</td></tr></tbody></table>
 
