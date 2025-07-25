@@ -563,3 +563,24 @@ ORDER BY month, region
 ```
 
 </Details>
+
+# Strategic Hypothesis
+## Core Hypothesis: Economic Recession Impact
+Q4 2023 economic conditions (rising interest rates, budget tightening, recession concerns) caused companies in Western markets to reduce discretionary contractor spending, driving increased churn in Individual Contractor services while essential Employer of Record services remained stable.
+
+## Supporting Evidence
+### Geographic Concentration
+- 90% of churn concentrated in AMS and EMEA regions (Western markets)
+- APAC/BRAZIL: Minimal churn impact during same period
+- **Implication**: Economic factors are region-specific, not platform-wide
+
+
+### Service Differentiation
+- IC service: 93% of total churned customers, churn doubled from 0.33% to 0.63%
+- EOR service: Perfect 0% churn across all months
+- **Implication**: Economic pressure affects contractor spend vs. employee payroll
+
+### Revenue Contraction Timing
+- Overall NRR decline: From 102.87% (August) to 100.68% (December)
+- Dual pressure: Companies both leaving (churn) AND reducing spend (low NRR)
+- **Implication**: Companies reducing both headcount and per-employee spend
