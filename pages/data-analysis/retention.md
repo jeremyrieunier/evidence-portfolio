@@ -68,6 +68,7 @@ This analysis reveals the problem is concentrated in specific services (IC) and 
     y=churn_rate
     yFmt=pct2
     chartAreaHeight=300
+    lineWidth=4
 />
 
 <DataTable data={churn} >
@@ -158,6 +159,7 @@ WHERE service_name = 'IC'
     y=churn_rate
     yFmt=pct2
     chartAreaHeight=300
+    lineWidth=4
 />
 
 <DataTable data={ic_churn} >
@@ -269,6 +271,7 @@ WHERE region IN ('AMS', 'EMEA')
     series=region
     yFmt=pct2
     chartAreaHeight=300
+    lineWidth=4
 />
 
 The convergence of both regions suggests common external factors (economic conditions, competitive pressure) affecting Western markets simultaneously, while other regions remain largely unaffected.
@@ -335,6 +338,7 @@ ORDER BY m.month, c.region
     yMax=1.04
     yMin=0.96
     chartAreaHeight=300
+    lineWidth=4
 />
 
 
@@ -393,6 +397,7 @@ ORDER BY month
     yMin=0.96
     series=business_unit
     chartAreaHeight=300
+    lineWidth=4
 />
 
 - The Contractor business unit is volatile. Exceptional August (107%), near-flat September (100.84%), then stabilized around 102.5%:
@@ -469,6 +474,7 @@ WHERE region = 'AMS'
     yMax=1.06
     yMin=0.96
     chartAreaHeight=300
+    lineWidth=4
 />
 
 ### EMEA follow a similar pattern with a gradual decline
@@ -486,6 +492,7 @@ WHERE region = 'EMEA'
     yMax=1.06
     yMin=0.96
     chartAreaHeight=300
+    lineWidth=4
 />
 
 ### APAC is the only region with accelerating expansion
@@ -503,6 +510,7 @@ WHERE region = 'APAC'
     yMax=1.06
     yMin=0.96
     chartAreaHeight=300
+    lineWidth=4
 />
 
 <Details title="SQL query used for the Region NRR analysis">

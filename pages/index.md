@@ -15,3 +15,8 @@ I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
 
 
+## How I built this website
+This website is made with [Evidence](https://evidence.dev/). Everything is publishing on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed on [Vercel](https://vercel.com/). 
+
+The design is inspired by the [Panic theme for Logseq](https://github.com/kirso/logseq-panic-theme), created by [Kirill So](https://www.kirillso.com/).
+

@@ -6,8 +6,8 @@ appearance:
 theme:
   colorPalettes:
     default:
-      - "#F9B537"  # Yellow
-      - "#FF79C6"  # Pink
+      - "#54C1DC"  # Blue
+      - "#ffb86c"  # Yellow
       - "#e03a3e"  # Red
       - "#f5821f"  # Orange
       - "#fdb827"  # Yellow
@@ -19,13 +19,15 @@ theme:
       - "#da70d6"  # Orchid
   colorScales:
     default:
-      - "#F9B537"  # Yellow
-      - "#e03a3e"  # Red
+      - "#111c2a" 
+      - "#8be9fd"  
   colors:
-    primary: "#54C1DC" 
-    accent: "#FF79C6"  
-    base: "#020A14"  
+    primary: "#FF79C6" # Blue
+    accent: "#FF79C6" # Pink
+    base: "#020A14"   # Dark Navy
     info: "#54C1DC"  
+
+
 
 # theme:
 #   colorPalettes:
