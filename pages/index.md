@@ -9,20 +9,18 @@ sidebar: show
 
 # Hi 👋 I'm Jeremy
 
-Hello Vercel! I'm a data analyst based in sunny Valencia, Spain, specializing in turning messy data into decisions that drive real business impact.
+I'm a data analyst based in sunny Valencia 🇪🇸. I work with ecommerce and SaaS companies, helping them build analytics capabilities, train teams, and use data to drive meaningful business decisions.
 
-With 9+ years across ecommerce and SaaS companies, I've advised C-level stakeholders and spent 7 years running a CRM and analytics consultancy. I focus on building scalable BI infrastructure and establishing self-service analytics that elevate data literacy across organizations.
+Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC Shopify stores understand their customer data better.
 
 I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
 ## Data Analysis Portfolio
-Below you'll find take-home assignments I completed during interview processes, anonymized and transformed into comprehensive case studies that showcase my analytical approach.
-
 ### HealthTech Chat Feature Analysis
 Analyzed 400k+ messages from 33k+ healthcare providers to measure chat feature impact. Discovered 8.5x booking performance difference between chat users and non-users, with chat-enabled providers driving 94% of total platform bookings. [View Analysis →](/data-analysis/chat/)
 
 ### Hotel Reservation Analysis
-Analyzed booking patterns across 2,500+ hotel reservations to optimize revenue and digital services. Identified female leisure travelers as most profitable segment and revealed critical 5.92% online check-in adoption requiring immediate attention. 
+Analyzed booking patterns across 2,500+ hotel reservations to optimize revenue and digital services. Identified most profitable segment and revealed critical 5.92% online check-in adoption requiring immediate attention. 
 [View Analysis →](/data-analysis/hotel/)
 
 ### Outbound Campaign Analysis
