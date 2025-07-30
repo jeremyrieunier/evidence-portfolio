@@ -1,13 +1,15 @@
 ---
-title: CV 
+title: Jeremy Rieunier CV
 hide_title: true
-gihubRepo: https://github.com/jeremyrieunier/evidence-portfolio
-xProfile: https://x.com/jeremyrieunier
-hideHeader: false
+hide_breadcrumbs: true
 ---
 
 # Jeremy Rieunier
-Valencia, Spain · jeremy [dot] rieunier [at] gmail [dot] com · [Linkedin](https://www.linkedin.com/in/jeremyrieunier/) · [Github](https://github.com/jeremyrieunier)
+## Data Analyst & Analytics Engineer
+- Valencia, Spain
+- jeremy [dot] rieunier [at] gmail [dot] com
+- [LinkedIn](https://www.linkedin.com/in/jeremyrieunier/)
+- [GitHub](https://github.com/jeremyrieunier)
 
 
 ## Experience
