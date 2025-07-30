@@ -9,7 +9,7 @@ sidebar: show
 
 # Hi 👋 I'm Jeremy
 
-I'm a data analyst based in sunny Valencia, Spain, specializing in turning messy data into decisions that drive real business impact.
+Hello Vercel! I'm a data analyst based in sunny Valencia, Spain, specializing in turning messy data into decisions that drive real business impact.
 
 With 9+ years across ecommerce and SaaS companies, I've advised C-level stakeholders and spent 7 years running a CRM and analytics consultancy. I focus on building scalable BI infrastructure and establishing self-service analytics that elevate data literacy across organizations.
 
