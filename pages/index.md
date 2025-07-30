@@ -1,7 +1,8 @@
 ---
 title: Jeremy Rieunier | Data Analyst & Analytics Engineer
-
 hide_title: true
+hide_breadcrumbs: true
+sidebar: show
 ---
 
 <img src="https://avatars.githubusercontent.com/jeremyrieunier" alt="Jeremy Rieunier" class="rounded-full w-36 h-36 mb-4">
