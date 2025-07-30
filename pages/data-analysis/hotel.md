@@ -20,7 +20,7 @@ queries:
 ---
 
 # Business Problem
-A hotel management company needed insights into customer booking behavior to optimize revenue and improve digital services.
+A property management software company needed insights into customer booking behavior to optimize revenue and improve digital services.
 
 Key questions included:
 - Which booking rates do different customer segments prefer?
@@ -29,10 +29,10 @@ Key questions included:
 
 # Data Schema
 ## Rates data table
-<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">UUID</td> <td class="markdown">Primary key, unique identifier for each rate type</td></tr> <tr class="markdown"><td class="markdown">rate_name</td> <td class="markdown">VARCHAR</td> <td class="markdown">Full descriptive rate name</td></tr> <tr class="markdown"><td class="markdown">short_rate_name</td> <td class="markdown">VARCHAR</td> <td class="markdown">Abbreviated rate name for analysis</td></tr> <tr class="markdown"><td class="markdown">settlement_action</td> <td class="markdown">INT</td> <td class="markdown">Rate settlement behavior indicator</td></tr> <tr class="markdown"><td class="markdown">settlement_trigger</td> <td class="markdown">INT</td> <td class="markdown">Trigger condition for rate settlement</td></tr> <tr class="markdown"><td class="markdown">settlement_value</td> <td class="markdown">DECIMAL</td> <td class="markdown">Settlement calculation value</td></tr> <tr class="markdown"><td class="markdown">settlement_type</td> <td class="markdown">INT</td> <td class="markdown">Type classification for settlement processing</td></tr></tbody></table>
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">STRING</td> <td class="markdown">Primary key, unique identifier for each rate type</td></tr> <tr class="markdown"><td class="markdown">rate_name</td> <td class="markdown">STRING</td> <td class="markdown">Full descriptive rate name</td></tr> <tr class="markdown"><td class="markdown">short_rate_name</td> <td class="markdown">STRING</td> <td class="markdown">Abbreviated rate name for analysis</td></tr> <tr class="markdown"><td class="markdown">settlement_action</td> <td class="markdown">INTEGER</td> <td class="markdown">Rate settlement behavior indicator</td></tr> <tr class="markdown"><td class="markdown">settlement_trigger</td> <td class="markdown">INTEGER</td> <td class="markdown">Trigger condition for rate settlement</td></tr> <tr class="markdown"><td class="markdown">settlement_value</td> <td class="markdown">DECIMAL</td> <td class="markdown">Settlement calculation value</td></tr> <tr class="markdown"><td class="markdown">settlement_type</td> <td class="markdown">INTEGER</td> <td class="markdown">Type classification for settlement processing</td></tr></tbody></table>
 
 ## Reservations data table  
-<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">start_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation start date/time</td></tr> <tr class="markdown"><td class="markdown">end_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation end date/time</td></tr> <tr class="markdown"><td class="markdown">created_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Booking creation timestamp</td></tr> <tr class="markdown"><td class="markdown">night_count</td> <td class="markdown">INT</td> <td class="markdown">Total nights booked</td></tr> <tr class="markdown"><td class="markdown">night_cost_sum</td> <td class="markdown">DECIMAL</td> <td class="markdown">Total revenue for stay</td></tr> <tr class="markdown"><td class="markdown">occupied_space_sum</td> <td class="markdown">INT</td> <td class="markdown">Total capacity units occupied</td></tr> <tr class="markdown"><td class="markdown">guest_count_sum</td> <td class="markdown">INT</td> <td class="markdown">Total number of guests</td></tr> <tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">UUID</td> <td class="markdown">Foreign key linking to rates table</td></tr> <tr class="markdown"><td class="markdown">gender</td> <td class="markdown">INT</td> <td class="markdown">Guest gender (1=Male, 2=Female, 0/NULL=Unknown)</td></tr> <tr class="markdown"><td class="markdown">age_group</td> <td class="markdown">INT</td> <td class="markdown">Guest age category (0=Unknown, 25=25-35, etc.)</td></tr> <tr class="markdown"><td class="markdown">nationality_code</td> <td class="markdown">VARCHAR</td> <td class="markdown">ISO country code</td></tr> <tr class="markdown"><td class="markdown">business_segment</td> <td class="markdown">VARCHAR</td> <td class="markdown">Distribution channel (ie "OTAs", "Leisure", "Direct Business")</td></tr> <tr class="markdown"><td class="markdown">is_online_checkin</td> <td class="markdown">BOOLEAN</td> <td class="markdown">Online check-in usage flag</td></tr></tbody></table>
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">start_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation start date/time</td></tr> <tr class="markdown"><td class="markdown">end_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation end date/time</td></tr> <tr class="markdown"><td class="markdown">created_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Booking creation timestamp</td></tr> <tr class="markdown"><td class="markdown">night_count</td> <td class="markdown">INTEGER</td> <td class="markdown">Total nights booked</td></tr> <tr class="markdown"><td class="markdown">night_cost_sum</td> <td class="markdown">DECIMAL</td> <td class="markdown">Total revenue for stay</td></tr> <tr class="markdown"><td class="markdown">occupied_space_sum</td> <td class="markdown">INTEGER</td> <td class="markdown">Total capacity units occupied</td></tr> <tr class="markdown"><td class="markdown">guest_count_sum</td> <td class="markdown">INTEGER</td> <td class="markdown">Total number of guests</td></tr> <tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">STRING</td> <td class="markdown">Foreign key linking to rates table</td></tr> <tr class="markdown"><td class="markdown">gender</td> <td class="markdown">INTEGER</td> <td class="markdown">Guest gender (1=Male, 2=Female, 0/NULL=Unknown)</td></tr> <tr class="markdown"><td class="markdown">age_group</td> <td class="markdown">INTEGER</td> <td class="markdown">Guest age category (0=Unknown, 25=25-35, etc.)</td></tr> <tr class="markdown"><td class="markdown">nationality_code</td> <td class="markdown">STRING</td> <td class="markdown">ISO country code</td></tr> <tr class="markdown"><td class="markdown">business_segment</td> <td class="markdown">STRING</td> <td class="markdown">Distribution channel (ie "OTAs", "Leisure", "Direct Business")</td></tr> <tr class="markdown"><td class="markdown">is_online_checkin</td> <td class="markdown">BOOLEAN</td> <td class="markdown">Online check-in usage flag</td></tr></tbody></table>
 
 
 # Executive Summary
@@ -115,22 +115,22 @@ ORDER BY gender DESC, rank
 
 
 **Male Guests - Flexibility Focused**
-- Fully Flexible rate dominates at 58.15% of male bookings
+- Fully Flexible rate dominates at 58% of male bookings
 - Clear preference for maximum booking flexibility over discounts
 
 **Female Guests - Balanced Approach**
-- Fully Flexible rate leads at 46.94% but less dominant than males
-- Non-Refundable rates at 18.33% - significantly higher than males (9.50%)
+- Fully Flexible rate leads at 47% but less dominant than males
+- Non-Refundable rates at 18% - significantly higher than males
 - More price-conscious, willing to accept restrictions for better rates
 
 **Unknown Gender - Early Planning**
-- Early-60 days rate dominates at 49.53% - dramatically different pattern
-- Fully Flexible secondary at 27.07%
+- Early-60 days rate dominates at 50% - dramatically different pattern
+- Fully Flexible secondary at 27%
 - Suggests advance corporate booking or travel agent reservations
 
 
 ## Age Group Analysis
-**60.78% of bookings have unknown age data**, limiting the reliability of age-based insights. Among known ages:
+**60.78% of bookings have unknown age data**, limiting the reliability of age-based insights.
 
 <BarChart 
     data={hotel_age_distribution}
@@ -274,7 +274,7 @@ LIMIT 10
     valueFmt=pct 
 />
 
-With 43.82% unknown nationality data and several countries having small sample sizes (46-72 bookings), insights for smaller markets should be considered preliminary. Business decisions should focus on the larger markets (US, GB and DE).
+With 44% unknown nationality data and several countries having small sample sizes (46-72 bookings), insights for smaller markets should be considered preliminary. Business decisions should focus on the larger markets (US, GB and DE).
 
 <Details title="SQL query used for the rate preferences by nationality">
 
@@ -303,14 +303,14 @@ ORDER BY SUM(COUNT(*)) OVER(PARTITION BY res.nationality_code) DESC, rank
 </Details>
 
 **European Guests -  Flexibility Seekers**
-- German guests lead flexibility preference at 71.43% Fully Flexible (154 bookings)
-- Czech guests at 76.12% (67 bookings) and Slovak guests at 63.89% (72 bookings) Fully Flexible
-- British guests show high flexibility demand at 65.24% (187 bookings)
+- German guests lead flexibility preference at 71% Fully Flexible (154 bookings)
+- Czech guests at 76% (67 bookings) and Slovak guests at 64% (72 bookings) Fully Flexible
+- British guests show high flexibility demand at 65% (187 bookings)
 
 **US Guests - Balanced Value Approach**
-- Fully Flexible preferred at 44.86% but significantly lower than Europeans
-- Higher price sensitivity: 16.05% choose Non-Refundable rates
-- Unique preference for Direct Booking rates at 7.82% (highest among all nationalities)
+- Fully Flexible preferred at 45% but significantly lower than Europeans
+- Higher price sensitivity: 16% choose Non-Refundable rates
+- Unique preference for Direct Booking rates at 8% (highest among all nationalities)
 
 
 ## Business Segment Analysis
