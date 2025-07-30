@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/posts/group-month",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/divvy-cleaning",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/posts",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

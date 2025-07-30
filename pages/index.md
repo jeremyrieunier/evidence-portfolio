@@ -17,7 +17,7 @@ I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
 ## Data Analysis Portfolio
 ### HealthTech Chat Feature Analysis
-Analyzed 400k+ messages from 33k+ healthcare providers to measure chat feature impact. Discovered 8.5x booking performance difference between chat users and non-users, with chat-enabled providers driving 94% of total platform bookings. [View Analysis →](/data-analysis/chat/)
+Analyzed 400k+ messages from 33k+ doctors to measure chat feature impact. Discovered 8.5x booking performance difference between chat users and non-users, with chat users driving 94% of total platform bookings. [View Analysis →](/data-analysis/chat/)
 
 ### Hotel Reservation Analysis
 Analyzed booking patterns across 2,500+ hotel reservations to optimize revenue and digital services. Identified most profitable segment and revealed critical 5.92% online check-in adoption requiring immediate attention. 
