@@ -12,8 +12,8 @@ WITH messages_from_doctors AS (
 SELECT
   week,
   SUM(
-    CASE WHEN message_status = 'read'THEN message_count ELSE 0 END) AS nsm_doctor_messages_read_by_patients,
-  ROUND((SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END) - LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week)) / LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week), 2) AS nsm_wow_growth,
+    CASE WHEN message_status = 'read'THEN message_count ELSE 0 END) AS messages_sent_by_doctors_read_by_patients,
+  ROUND((SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END) - LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week)) / LAG(SUM(CASE WHEN message_status = 'read' THEN message_count ELSE 0 END)) OVER (ORDER BY week), 2) AS wow_growth,
   SUM(CASE WHEN message_status = 'not read' THEN message_count ELSE 0 END) AS doctor_messages_not_read,
   SUM(message_count) AS total_messages_sent_by_doctor,
   SUM(message_count) / COUNT(DISTINCT doctor_composite_id) AS avg_messages_sent_per_doctor,

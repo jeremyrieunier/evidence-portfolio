@@ -11,7 +11,7 @@ sidebar: show
 
 I'm a data analyst based in sunny Valencia 🇪🇸. I work with ecommerce and SaaS companies, helping them build analytics capabilities, train teams, and use data to drive meaningful business decisions.
 
-Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC Shopify stores understand their customer data better.
+Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC Shopify stores understand their customers better.
 
 I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
@@ -31,7 +31,7 @@ Evaluated  outbound marketing campaigns to optimize SaaS growth strategy. Identi
 Analyzed customer retention trends for SaaS workforce management platform. Identified monthly churn doubling from 0.13% to 0.27% with 93% concentrated 1 product line. Revealed geographic concentration in AMS/EMEA regions (90% of churn) while Net Revenue Retention declined from 102.87% to 100.68%. [View Analysis →](/data-analysis/retention/)
 
 ## How I built this website
-This website is built with [Evidence](https://evidence.dev/). Everything is publishing on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed through [Vercel](https://vercel.com/). 
+This website is built with [Evidence](https://evidence.dev/). Everything is publishing on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed with [Vercel](https://vercel.com/). 
 
 The design is inspired by the [Panic theme for Logseq](https://github.com/kirso/logseq-panic-theme), created by [Kirill So](https://www.kirillso.com/).
 
