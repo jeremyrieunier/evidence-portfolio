@@ -29,7 +29,71 @@ Outbound alone can generate $589K-$1.15M additional ARR (8-16% of $7M growth tar
 ## Key Ingishts
 
 ### Clear Performance Hierarchy Identified
-- **Top Performers**: Technology Intent ($27.38 per company) and Ask Platform Lite ($26.23 per company)
+<BubbleChart
+  data={matrix}
+  x=companies_touched
+  y=pipeline_value_per_company
+  series=campaign
+  size=pipeline_value_created
+  yFmt=usd
+  yMin=0
+  chartAreaHeight=350
+  xLabelWrap=true
+>
+  <ReferenceLine
+    x=7500
+    label="Average Companies Touched"
+  />
+  <ReferenceLine
+    y=8.70
+    label="Average Pipeline Value"
+  />
+  <ReferenceArea 
+    xMin=15000 
+    xMax=20000 
+    yMin=3
+    yMax=12 
+    label="Optimization Needed" 
+    color="warning"
+    border={true}
+    labelPosition="center"
+  />
+
+  <ReferenceArea 
+    xMin=7000 
+    xMax=13000 
+    yMin=12 
+    yMax=27 
+    label="Best Overall Performers" 
+    color="positive"
+    border={true}
+    labelPosition="center"
+  />
+
+  <ReferenceArea 
+    xMin=1000 
+    xMax=6000 
+    yMin=22
+    yMax=30
+    label="Growth Potential" 
+    color="info"
+    border={true}
+    labelPosition="center"
+  />
+
+  <ReferenceArea 
+    xMin=0 
+    xMax=5000 
+    yMin=0
+    yMax=15
+    label="Reconsider"
+    color="negative"
+    border={true}
+    labelPosition="center"
+  />
+</BubbleChart>
+
+- **Top Performers**: Klaviyo flows enrich	($14.7 per company) and GPT V3 - CAPI ($23.3 per company)
 - **Scale Leaders**: GA4 (19.3k companies) and Loom (19k companies) campaigns provide volume but lower efficiency
 - **Overall Average**: $8.70 pipeline value per company touched with 53.3% pipeline revenue win rate
 

@@ -15,6 +15,8 @@ Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC
 
 I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
+---
+
 ## Data Analysis Portfolio
 ### HealthTech Chat Feature Analysis
 Analyzed 400k+ messages from 33k+ doctors to measure chat feature impact. Discovered 8.5x booking performance difference between chat users and non-users, with chat users driving 94% of total platform bookings. [View Analysis →](/data-analysis/chat/)
@@ -24,11 +26,13 @@ Analyzed booking patterns across 2,500+ hotel reservations to optimize revenue a
 [View Analysis →](/data-analysis/hotel/)
 
 ### Outbound Campaign Analysis
-Evaluated outbound marketing campaigns to optimize SaaS growth strategy. Identified 10x performance gap between top and bottom campaigns, with best performers generating $27+ pipeline value per company. Projected $589K-$1.15M additional ARR potential from scaling successful campaigns to 127k merchant TAM. [View Analysis →](/data-analysis/outbound/)
+Evaluated outbound marketing campaigns to optimize SaaS growth strategy. Identified 10x performance gap between top and bottom campaigns, with best performers generating $27+ pipeline value per company touched. Projected $589K-$1.15M additional ARR potential from scaling successful campaigns to total adressable market. [View Analysis →](/data-analysis/outbound/)
 
 
 ### Retention Analysis
 Analyzed customer retention trends for a SaaS workforce management platform. Identified monthly churn doubling from 0.13% to 0.27% with 93% concentrated into 1 product line. Revealed geographic concentration in AMS/EMEA regions while Net Revenue Retention declined from 102.87% to 100.68%. [View Analysis →](/data-analysis/retention/)
+
+---
 
 ## How I built this website
 This website is built with [Evidence](https://evidence.dev/). Everything is publishing on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed with [Vercel](https://vercel.com/). 
