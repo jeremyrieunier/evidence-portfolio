@@ -24,11 +24,11 @@ Analyzed booking patterns across 2,500+ hotel reservations to optimize revenue a
 [View Analysis →](/data-analysis/hotel/)
 
 ### Outbound Campaign Analysis
-Evaluated  outbound marketing campaigns to optimize SaaS growth strategy. Identified 10x performance gap between top and bottom campaigns, with best performers generating $27+ pipeline value per company. Projected $589K-$1.15M additional ARR potential from scaling successful campaigns to 127k merchant TAM. [View Analysis →](/data-analysis/outbound/)
+Evaluated outbound marketing campaigns to optimize SaaS growth strategy. Identified 10x performance gap between top and bottom campaigns, with best performers generating $27+ pipeline value per company. Projected $589K-$1.15M additional ARR potential from scaling successful campaigns to 127k merchant TAM. [View Analysis →](/data-analysis/outbound/)
 
 
 ### Retention Analysis
-Analyzed customer retention trends for SaaS workforce management platform. Identified monthly churn doubling from 0.13% to 0.27% with 93% concentrated 1 product line. Revealed geographic concentration in AMS/EMEA regions (90% of churn) while Net Revenue Retention declined from 102.87% to 100.68%. [View Analysis →](/data-analysis/retention/)
+Analyzed customer retention trends for a SaaS workforce management platform. Identified monthly churn doubling from 0.13% to 0.27% with 93% concentrated into 1 product line. Revealed geographic concentration in AMS/EMEA regions while Net Revenue Retention declined from 102.87% to 100.68%. [View Analysis →](/data-analysis/retention/)
 
 ## How I built this website
 This website is built with [Evidence](https://evidence.dev/). Everything is publishing on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed with [Vercel](https://vercel.com/). 

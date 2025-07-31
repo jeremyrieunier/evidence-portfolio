@@ -7,7 +7,6 @@ queries:
   - booking: chat/booking_metrics.sql
 ---
 
-# Business Problem
 A leading healthcare technology platform needed to evaluate the impact of their newly launched chat feature that enables direct communication between doctors and patients.
 
 The feature was designed to:

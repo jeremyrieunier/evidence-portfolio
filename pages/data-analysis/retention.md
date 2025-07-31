@@ -9,23 +9,12 @@ queries:
   - nrr_region: retention/nrr_region.sql
 ---
 
-# Business Problem
 A leading global workforce management platform experienced concerning retention trends during Q4 2023. The company, serving 13,700+ businesses needed urgent analysis to understand:
 
 - What's driving the dramatic increase in customer churn?
 - Which services and regions are most affected by retention challenges?
 - How is revenue expansion from existing customers being impacted?
 - What external factors correlate with the retention decline?
-
-# Data Schema
-## customer_monthly_revenue data table
-<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">month</td> <td class="markdown">DATE</td> <td class="markdown">Revenue month</td></tr> <tr class="markdown"><td class="markdown">customer_id</td> <td class="markdown">INT</td> <td class="markdown">Unique customer identifier</td></tr> <tr class="markdown"><td class="markdown">service_id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">contracts</td> <td class="markdown">INT</td> <td class="markdown">Active service contracts count</td></tr> <tr class="markdown"><td class="markdown">total_saas_revenue_usd</td> <td class="markdown">FLOAT</td> <td class="markdown">Monthly SaaS revenue per service</td></tr></tbody></table>
-
-## dim_customer data table
-<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">customer_id</td> <td class="markdown">INT</td> <td class="markdown">Primary customer key</td></tr> <tr class="markdown"><td class="markdown">country</td> <td class="markdown">STRING</td> <td class="markdown">Customer country location</td></tr> <tr class="markdown"><td class="markdown">region</td> <td class="markdown">STRING</td> <td class="markdown">Geographic region code</td></tr></tbody></table>
-
-## dim_service data table
-<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">name</td> <td class="markdown">STRING</td> <td class="markdown">Service name (IC, EOR, SHD, PR, GP)</td></tr> <tr class="markdown"><td class="markdown">business_unit</td> <td class="markdown">STRING</td> <td class="markdown">Internal business unit assignment</td></tr> <tr class="markdown"><td class="markdown">standard_monthly_fee</td> <td class="markdown">STRING</td> <td class="markdown">Standard pricing per contract</td></tr></tbody></table>
 
 # Executive Summary
 Monthly customer churn has doubled from 0.13% to 0.27%, while revenue expansion from existing customers has declined from 102.87% to 100.68%.
@@ -58,6 +47,17 @@ This analysis reveals the problem is concentrated in specific services (IC) and 
 **Portfolio Strategy**: Accelerate growth in resilient regions (APAC) and services (EOR), while developing retention programs specifically for economic-sensitive segments.
 
 **Market Position**: Reframe contractor services as cost-saving solutions during economic downturns rather than growth investments.
+
+
+# Data Schema
+## customer_monthly_revenue data table
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">month</td> <td class="markdown">DATE</td> <td class="markdown">Revenue month</td></tr> <tr class="markdown"><td class="markdown">customer_id</td> <td class="markdown">INT</td> <td class="markdown">Unique customer identifier</td></tr> <tr class="markdown"><td class="markdown">service_id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">contracts</td> <td class="markdown">INT</td> <td class="markdown">Active service contracts count</td></tr> <tr class="markdown"><td class="markdown">total_saas_revenue_usd</td> <td class="markdown">FLOAT</td> <td class="markdown">Monthly SaaS revenue per service</td></tr></tbody></table>
+
+## dim_customer data table
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">customer_id</td> <td class="markdown">INT</td> <td class="markdown">Primary customer key</td></tr> <tr class="markdown"><td class="markdown">country</td> <td class="markdown">STRING</td> <td class="markdown">Customer country location</td></tr> <tr class="markdown"><td class="markdown">region</td> <td class="markdown">STRING</td> <td class="markdown">Geographic region code</td></tr></tbody></table>
+
+## dim_service data table
+<table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">name</td> <td class="markdown">STRING</td> <td class="markdown">Service name (IC, EOR, SHD, PR, GP)</td></tr> <tr class="markdown"><td class="markdown">business_unit</td> <td class="markdown">STRING</td> <td class="markdown">Internal business unit assignment</td></tr> <tr class="markdown"><td class="markdown">standard_monthly_fee</td> <td class="markdown">STRING</td> <td class="markdown">Standard pricing per contract</td></tr></tbody></table>
 
 # Monthly Churn Rate Analysis
 ## Customer monthly churn rate has steadily increased from August to December 2023

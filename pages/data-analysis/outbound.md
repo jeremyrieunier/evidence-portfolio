@@ -8,7 +8,6 @@ queries:
     - matrix: outbound/matrix.sql
 ---
 
-# Business Problem
 A growing e-commerce SaaS platform serving Shopify merchants needed to evaluate the effectiveness and scalability of their outbound marketing campaigns across different market segments.
 
 With 16 campaigns targeting various customer segments and a goal to scale from $3M to $10M ARR, the company required data-driven insights to:
