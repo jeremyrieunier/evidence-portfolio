@@ -17,11 +17,15 @@ With 16 campaigns targeting various customer segments and a goal to scale from $
 - Compare outbound effectiveness against other acquisition channels (inbound, paid ads)
 - Develop strategic recommendations for optimizing campaign ROI and resource allocation
 
+---
+
 # Key Business Questions
 - Campaign Effectiveness: Which outbound campaigns deliver the highest ROI and should be prioritized?
 - Market Opportunity: What's the potential ARR from scaling outbound efforts to the entire TAM?
 - Channel Strategy: How does outbound compare to inbound and paid acquisition channels for reaching $10M ARR?
 - Growth Optimization: What are the key bottlenecks and optimization opportunities?
+
+---
 
 # Executive Summary
 Outbound alone can generate $589K-$1.15M additional ARR (8-16% of $7M growth target), requiring a balanced acquisition mix to reach $10M ARR goal.
@@ -106,6 +110,8 @@ Outbound alone can generate $589K-$1.15M additional ARR (8-16% of $7M growth tar
 - Outbound Ceiling: Even optimistic scaling scenarios fall short of $7M ARR gap
 - Multi-Channel Necessity: Inbound content marketing and paid acquisition required to complement outbound precision targeting
 - Strategic Balance: Each channel addresses different stages of customer journey and market segments
+
+---
 
 # Campaign Performance Analysis
 The growth team is responsible for lead generation, with the sales team handling conversion of these opportunities into customers. Thus, the goals of these outbound campaigns are:
@@ -387,6 +393,8 @@ All scenarios fall well within our current sales capacity:
 - Optimistic scenario: $1,150,798 (27.4% of capacity)
 
 This analysis suggests that scaling our outbound efforts to our entire TAM could generate between $589K and $1.15M in new ARR. This represents a significant achievable growth opportunity that can be handled by the current sales team capacity.
+
+---
 
 # Strategic Channel Recommendations
 ## Growth Challenge

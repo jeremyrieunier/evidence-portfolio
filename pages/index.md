@@ -9,7 +9,7 @@ sidebar: show
 
 # Hi 👋 I'm Jeremy
 
-I'm a data analyst based in sunny Valencia 🇪🇸. I work with ecommerce and SaaS companies, helping them build analytics capabilities, train teams, and use data to drive meaningful business decisions.
+I'm a data practitioner based in sunny Valencia 🇪🇸. I work with ecommerce and SaaS companies, helping them build analytics capabilities, train teams, and use data to drive meaningful business decisions.
 
 Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC Shopify stores understand their customers better.
 

@@ -22,15 +22,16 @@ Key questions included:
 - What are the main barriers to user engagement?
 - Where are the biggest growth opportunities?
 
-# Data Schema
+---
 
+# Data Schema
 ## Doctors data table
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">doctor_id</td> <td class="markdown">STRING</td> <td class="markdown">Unique doctor identifier</td></tr> <tr class="markdown"><td class="markdown">doctor_specialization</td> <td class="markdown">STRING</td> <td class="markdown">Medical specialty</td></tr> <tr class="markdown"><td class="markdown">doctor_type</td> <td class="markdown">STRING</td> <td class="markdown">Doctor classification (paramedical, medical)</td></tr> <tr class="markdown"><td class="markdown">became_customer_date</td> <td class="markdown">DATE</td> <td class="markdown">Platform registration date</td></tr> <tr class="markdown"><td class="markdown">country_code</td> <td class="markdown">STRING</td> <td class="markdown">Geographic market</td></tr> <tr class="markdown"><td class="markdown">week</td> <td class="markdown">DATE</td> <td class="markdown">Analysis week</td></tr> <tr class="markdown"><td class="markdown">bookings</td> <td class="markdown">INTEGER</td> <td class="markdown">Weekly appointment bookings received</td></tr> <tr class="markdown"><td class="markdown">days_with_session</td> <td class="markdown">INTEGER</td> <td class="markdown">Platform engagement days per week</td></tr></tbody></table>
-
 
 ## Messages data table
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">doctor_id</td> <td class="markdown">STRING</td> <td class="markdown">Doctor identifier</td></tr> <tr class="markdown"><td class="markdown">patient_id</td> <td class="markdown">STRING</td> <td class="markdown">Patient identifier</td></tr> <tr class="markdown"><td class="markdown">sender</td> <td class="markdown">STRING</td> <td class="markdown">Message sender (doctor/patient)</td></tr> <tr class="markdown"><td class="markdown">message_status</td> <td class="markdown">STRING</td> <td class="markdown">Read/not_read status</td></tr> <tr class="markdown"><td class="markdown">message_type</td> <td class="markdown">STRING</td> <td class="markdown">Content type (text, file, etc.)</td></tr> <tr class="markdown"><td class="markdown">week</td> <td class="markdown">DATE</td> <td class="markdown">Message week</td></tr> <tr class="markdown"><td class="markdown">country_code</td> <td class="markdown">STRING</td> <td class="markdown">Geographic market (br, mx)</td></tr></tbody></table>
 
+---
 
 # North Star Metric: Messages Sent by Doctors and Read by Patients per Week
 This metric focuses on successful communication: messages that doctors send and patients actually read.
@@ -309,6 +310,8 @@ ORDER BY user_group
 ```
 
 </Details>
+
+---
 
 # Strategic Recommendations
 

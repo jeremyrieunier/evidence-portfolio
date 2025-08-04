@@ -16,6 +16,8 @@ A leading global workforce management platform experienced concerning retention 
 - How is revenue expansion from existing customers being impacted?
 - What external factors correlate with the retention decline?
 
+---
+
 # Executive Summary
 Monthly customer churn has doubled from 0.13% to 0.27%, while revenue expansion from existing customers has declined from 102.87% to 100.68%.
 
@@ -48,6 +50,7 @@ This analysis reveals the problem is concentrated in specific services (IC) and 
 
 **Market Position**: Reframe contractor services as cost-saving solutions during economic downturns rather than growth investments.
 
+---
 
 # Data Schema
 ## customer_monthly_revenue data table
@@ -58,6 +61,8 @@ This analysis reveals the problem is concentrated in specific services (IC) and 
 
 ## dim_service data table
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">id</td> <td class="markdown">INT</td> <td class="markdown">Service identifier</td></tr> <tr class="markdown"><td class="markdown">name</td> <td class="markdown">STRING</td> <td class="markdown">Service name (IC, EOR, SHD, PR, GP)</td></tr> <tr class="markdown"><td class="markdown">business_unit</td> <td class="markdown">STRING</td> <td class="markdown">Internal business unit assignment</td></tr> <tr class="markdown"><td class="markdown">standard_monthly_fee</td> <td class="markdown">STRING</td> <td class="markdown">Standard pricing per contract</td></tr></tbody></table>
+
+---
 
 # Monthly Churn Rate Analysis
 ## Customer monthly churn rate has steadily increased from August to December 2023
@@ -569,6 +574,8 @@ ORDER BY month, region
 
 </Details>
 
+---
+
 # Strategic Hypothesis
 ## Core Hypothesis: Economic Recession Impact
 Q4 2023 economic conditions (rising interest rates, budget tightening, recession concerns) caused companies in Western markets to reduce discretionary contractor spending, driving increased churn in Individual Contractor services while essential Employer of Record services remained stable.
@@ -589,6 +596,8 @@ Q4 2023 economic conditions (rising interest rates, budget tightening, recession
 - Overall NRR decline: From 102.87% (August) to 100.68% (December)
 - Dual pressure: Companies both leaving (churn) AND reducing spend (low NRR)
 - **Implication**: Companies reducing both headcount and per-employee spend
+
+---
 
 # Strategic Recommendations
 ## Economic-Resilient Service Portfolio

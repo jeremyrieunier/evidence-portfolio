@@ -26,6 +26,8 @@ Key questions included:
 - What drives online check-in adoption?
 - Which guest segments generate the highest revenue per occupied space?
 
+---
+
 # Executive Summary
 ## Booking Rate Preferences
 - Male guests prioritize flexibility (58% choose Fully Flexible rates)
@@ -41,6 +43,8 @@ Key questions included:
 - Female Leisure travelers most profitable ($63.46 per night per capacity)
 - Unknown FIT travelers occupy significant space with minimal returns ($13.47 per capacity)
 
+---
+
 # Data Schema
 ## Rates data table
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">STRING</td> <td class="markdown">Primary key, unique identifier for each rate type</td></tr> <tr class="markdown"><td class="markdown">rate_name</td> <td class="markdown">STRING</td> <td class="markdown">Full descriptive rate name</td></tr> <tr class="markdown"><td class="markdown">short_rate_name</td> <td class="markdown">STRING</td> <td class="markdown">Abbreviated rate name for analysis</td></tr> <tr class="markdown"><td class="markdown">settlement_action</td> <td class="markdown">INTEGER</td> <td class="markdown">Rate settlement behavior indicator</td></tr> <tr class="markdown"><td class="markdown">settlement_trigger</td> <td class="markdown">INTEGER</td> <td class="markdown">Trigger condition for rate settlement</td></tr> <tr class="markdown"><td class="markdown">settlement_value</td> <td class="markdown">DECIMAL</td> <td class="markdown">Settlement calculation value</td></tr> <tr class="markdown"><td class="markdown">settlement_type</td> <td class="markdown">INTEGER</td> <td class="markdown">Type classification for settlement processing</td></tr></tbody></table>
@@ -48,11 +52,14 @@ Key questions included:
 ## Reservations data table  
 <table class="markdown text-left"><thead class="markdown"><tr class="markdown"><th class="markdown"><strong class="markdown">Column</strong></th> <th class="markdown"><strong class="markdown">Data Type</strong></th> <th class="markdown"><strong class="markdown">Description</strong></th></tr></thead> <tbody class="markdown"><tr class="markdown"><td class="markdown">start_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation start date/time</td></tr> <tr class="markdown"><td class="markdown">end_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Reservation end date/time</td></tr> <tr class="markdown"><td class="markdown">created_utc</td> <td class="markdown">TIMESTAMP</td> <td class="markdown">Booking creation timestamp</td></tr> <tr class="markdown"><td class="markdown">night_count</td> <td class="markdown">INTEGER</td> <td class="markdown">Total nights booked</td></tr> <tr class="markdown"><td class="markdown">night_cost_sum</td> <td class="markdown">DECIMAL</td> <td class="markdown">Total revenue for stay</td></tr> <tr class="markdown"><td class="markdown">occupied_space_sum</td> <td class="markdown">INTEGER</td> <td class="markdown">Total capacity units occupied</td></tr> <tr class="markdown"><td class="markdown">guest_count_sum</td> <td class="markdown">INTEGER</td> <td class="markdown">Total number of guests</td></tr> <tr class="markdown"><td class="markdown">rate_id</td> <td class="markdown">STRING</td> <td class="markdown">Foreign key linking to rates table</td></tr> <tr class="markdown"><td class="markdown">gender</td> <td class="markdown">INTEGER</td> <td class="markdown">Guest gender (1=Male, 2=Female, 0/NULL=Unknown)</td></tr> <tr class="markdown"><td class="markdown">age_group</td> <td class="markdown">INTEGER</td> <td class="markdown">Guest age category (0=Unknown, 25=25-35, etc.)</td></tr> <tr class="markdown"><td class="markdown">nationality_code</td> <td class="markdown">STRING</td> <td class="markdown">ISO country code</td></tr> <tr class="markdown"><td class="markdown">business_segment</td> <td class="markdown">STRING</td> <td class="markdown">Distribution channel (ie "OTAs", "Leisure", "Direct Business")</td></tr> <tr class="markdown"><td class="markdown">is_online_checkin</td> <td class="markdown">BOOLEAN</td> <td class="markdown">Online check-in usage flag</td></tr></tbody></table>
 
+---
+
 # Assumptions and Limitations
 - All reservation states included: Analysis includes cancelled reservations under the assumption that booking intent existed regardless of cancellation reason
 - No duplicate validation performed: Assumes dataset has been pre-cleaned by data platform/engineering team with no booking ID duplicates
 - Nationality analysis limited: Only included countries with 40+ bookings for reliability
 
+---
 
 # Booking Rate Choices by Customer Segments
 
@@ -431,7 +438,7 @@ FROM ${reservations}
 - FIT: 0.97% online check-in rate (516 total bookings) - surprisingly lowest
 - Film: 0% online check-in rate (55 total bookings)
 
-<Details title="SQL query used for the  online check-in analysis by business segment">
+<Details title="SQL query used for the online check-in analysis by business segment">
 
 ```sql
 SELECT
@@ -622,7 +629,8 @@ ORDER BY avg_night_revenue_per_occupied_capacity DESC
 ### Least Profitable Guest Segments
 - **Unknown Film segment**: $4.18 per night per capacity (16 bookings, 0.64% of total bookings, $18.3K total revenue)
 - **Unknown FIT travelers**: $13.47 per night per capacity (340 bookings, 13.59% of total bookings, $68.3K total revenue)
-___________
+
+---
 
 # Conclusions and Recommendations
 
