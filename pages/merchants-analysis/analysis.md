@@ -17,7 +17,7 @@ Before analyzing merchant characteristics, we must first establish a clear defin
 We define merchant success based on total revenue (`total_cost`). This metric directly reflects business performance and value creation, making it the most appropriate measure for identifying successful merchants on the platform.
 
 ### Filtering for Active Merchants
-Initial analysis of our 27,960 merchants revealed a significant data quality issue that would skew any meaningful analysis:
+Initial analysis of our 27,960 merchants revealed a significant issue that would skew any meaningful analysis:
 
 <DataTable data={merchants_distribution}/>
 
@@ -186,3 +186,6 @@ LIMIT 2
 The chart clearly shows Providers 29 and 39 (large bubbles in bottom-left) occupy the optimal position with low reprint rates, fast production times, and massive volume. This validates our scoring methodology perfectly.
 
 On the other hand, small bubbles scattered in the upper-right represent low-volume providers with poor performance—exactly the ones our scoring system flagged for contract termination.
+
+## Scoring Print Provider Data
+<DataTable data={print_providers_score} />
