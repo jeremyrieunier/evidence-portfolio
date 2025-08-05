@@ -24,11 +24,11 @@ Initial analysis of our 27,960 merchants revealed a significant data quality iss
 We excluded merchants with ≤10 orders from our analysis for the following reasons:
 
 - Business vs. Hobbyist Activity: Merchants with ≤10 orders over 6 months might either represent occasional sellers or new sellers rather than active businesses
-- Analytical Integrity: Including dormant accounts would make our "successful merchant" analysis meaningless - we'd be comparing businesses against occasional platform users
+- Analytical Integrity: Including dormant accounts would make our "successful merchant" analysis meaningless
 - Sample Quality: Focusing on 3,471 active merchants provides cleaner, more actionable insights
 
 ### Sucess Definition
-The analysis reveals a classic power law distribution with a "hockey stick" curve:
+The analysis reveals a classic power law distribution with a hockey stick curve:
 
 <BarChart 
     data={top_merchants} 
