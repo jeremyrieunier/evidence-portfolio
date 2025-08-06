@@ -4,7 +4,7 @@ WITH orders AS (
     merchant_id,
     order_dt,
     sales_channel_type_id,
-    merchant_registered_dt,
+    merchant_registered_dt
   FROM ecommerce.orders
   WHERE (fulfilled_dt > order_dt OR fulfilled_dt IS NULL)
     AND order_dt > merchant_registered_dt
@@ -33,7 +33,7 @@ primary_channel AS (
     merchant_id,
     strftime(order_dt, '%Y-%m') AS activity_month,
     sales_channel_type_id,
-    COUNT(DISTINCT order_id) AS monthly_orders,
+    COUNT(DISTINCT order_id) AS monthly_orders
   FROM orders
   GROUP BY merchant_id, activity_month, sales_channel_type_id
   QUALIFY ROW_NUMBER() OVER (PARTITION BY merchant_id, activity_month ORDER BY monthly_orders DESC, sales_channel_type_id ASC) = 1
