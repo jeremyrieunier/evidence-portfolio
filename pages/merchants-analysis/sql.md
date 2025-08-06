@@ -153,3 +153,4 @@ ORDER BY o.order_dt, order_id
 <DataTable data={orders_rank}/>
 
 
+# SQL statement to create a table containing print providers with average production time, reprint percent, last order timestamp, and primary shipping carrier
