@@ -40,7 +40,7 @@ order_metrics AS (
     COUNT(DISTINCT o.order_id) / 6.0 AS avg_monthly_orders,
     COUNT(DISTINCT o.address_to_country) AS countries_served,
     COUNT(DISTINCT o.sales_channel_type_id) AS sales_channel_count,
-    AVG(o.total_cost) AS avg_order_value
+    SUM(o.total_cost) / COUNT(o.order_id) AS merchant_aov
   FROM orders o
   JOIN successful_merchants s
     ON o.merchant_id = s.merchant_id
@@ -53,7 +53,7 @@ line_item_metrics AS (
     s.merchant_id,
     COUNT(DISTINCT l.product_type) AS product_types_count,
     COUNT(DISTINCT l.print_provider_id) as print_providers_count,
-    CAST(SUM(l.quantity) AS FLOAT) / COUNT(DISTINCT o.order_id) AS avg_items_per_order
+    SUM(l.quantity) / COUNT(DISTINCT o.order_id) AS avg_items_per_order
   FROM orders o
   JOIN successful_merchants s
     ON o.merchant_id = s.merchant_id
@@ -82,7 +82,7 @@ SELECT
    'avg_sales_channels',
    'avg_product_types',
    'avg_print_providers',
-   'avg_order_value',
+   'avg_merchant_aov',
    'avg_items_per_order'
  ]) AS metric,
  unnest([
@@ -92,7 +92,7 @@ SELECT
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN sales_channel_count END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN product_types_count END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN print_providers_count END),
-   AVG(CASE WHEN merchant_tier = 'Top 15%' THEN avg_order_value END),
+   AVG(CASE WHEN merchant_tier = 'Top 15%' THEN merchant_aov END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN avg_items_per_order END)
  ]) AS top_15_percent,
  unnest([
@@ -102,7 +102,7 @@ SELECT
    AVG(CASE WHEN merchant_tier = 'Others' THEN sales_channel_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN product_types_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN print_providers_count END),
-   AVG(CASE WHEN merchant_tier = 'Others' THEN avg_order_value END),
+   AVG(CASE WHEN merchant_tier = 'Others' THEN merchant_aov END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN avg_items_per_order END)
  ]) AS others,
  (unnest([
@@ -112,7 +112,7 @@ SELECT
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN sales_channel_count END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN product_types_count END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN print_providers_count END),
-   AVG(CASE WHEN merchant_tier = 'Top 15%' THEN avg_order_value END),
+   AVG(CASE WHEN merchant_tier = 'Top 15%' THEN merchant_aov END),
    AVG(CASE WHEN merchant_tier = 'Top 15%' THEN avg_items_per_order END)
  ]) - unnest([
    COUNT(CASE WHEN merchant_tier = 'Others' THEN 1 END),
@@ -121,7 +121,7 @@ SELECT
    AVG(CASE WHEN merchant_tier = 'Others' THEN sales_channel_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN product_types_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN print_providers_count END),
-   AVG(CASE WHEN merchant_tier = 'Others' THEN avg_order_value END),
+   AVG(CASE WHEN merchant_tier = 'Others' THEN merchant_aov END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN avg_items_per_order END)
  ])) / NULLIF(unnest([
    COUNT(CASE WHEN merchant_tier = 'Others' THEN 1 END),
@@ -130,7 +130,7 @@ SELECT
    AVG(CASE WHEN merchant_tier = 'Others' THEN sales_channel_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN product_types_count END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN print_providers_count END),
-   AVG(CASE WHEN merchant_tier = 'Others' THEN avg_order_value END),
+   AVG(CASE WHEN merchant_tier = 'Others' THEN merchant_aov END),
    AVG(CASE WHEN merchant_tier = 'Others' THEN avg_items_per_order END)
  ]), 0) AS difference
 FROM merchant_metrics;

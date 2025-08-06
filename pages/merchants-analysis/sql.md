@@ -35,6 +35,8 @@ ORDER BY order_month;
 
 <DataTable data={orders_month}/>
 
+---
+
 # SQL query returning merchants total sales, product count, and order count ordered by order count for merchants with more than 5 orders
 
 ```sql
@@ -85,6 +87,7 @@ ORDER BY om.order_count DESC;
 
 <DataTable data={merchants_sales}/>
 
+---
 
 # SQL query returning all ORDER_IDs with the time the merchant has been active at the time of the order, the rank of the merchant by order count for the previous month, and the merchant's primary sales channel for the previous month
 
@@ -161,6 +164,7 @@ ORDER BY o.order_dt, order_id;
 
 <DataTable data={orders_rank}/>
 
+---
 
 # SQL statement to create a table containing print providers with average production time, reprint percent, last order timestamp, and primary shipping carrier
 

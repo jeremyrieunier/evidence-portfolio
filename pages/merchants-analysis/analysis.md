@@ -89,6 +89,7 @@ Merchant success requires both operational scale and sophisticated business stra
 
 Interestingly, both groups use approximately the same number of sales channels (1.11 vs 1.12), indicating that channel diversification is not a key differentiator among active merchants. Success appears more related to execution within existing channels rather than multi-channel presence.
 
+---
 
 # Top Shipping Carriers Analysis
 
@@ -108,6 +109,8 @@ Interestingly, both groups use approximately the same number of sales channels (
 - Local carriers often provide superior last-mile delivery in their home markets
 
 While the top 2 carriers handle 89% of volume efficiently, full consolidation would create unnecessary risks and service gaps. The current high market share reflects merchant preferences for these carriers in their optimal regions, not universal superiority across all markets.
+
+--- 
 
 # Print Provider Analysis
 ## Methodology
