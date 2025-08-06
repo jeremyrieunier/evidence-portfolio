@@ -65,4 +65,4 @@ LEFT JOIN merchants_monthly_ranks r
 LEFT JOIN primary_channel c
   ON o.merchant_id = c.merchant_id
   AND c.activity_month = o.previous_month
-ORDER BY o.order_dt, order_id
+ORDER BY o.order_dt, order_id;

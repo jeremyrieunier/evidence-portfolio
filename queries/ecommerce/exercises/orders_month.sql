@@ -19,4 +19,4 @@ SELECT
   COUNT(DISTINCT merchant_id) AS total_merchants
 FROM orders
 GROUP BY order_month
-ORDER BY order_month 
+ORDER BY order_month;

@@ -31,4 +31,4 @@ LEFT JOIN order_line_summary l
   ON o.order_id = l.order_id
 GROUP BY o.merchant_id
 HAVING COUNT(o.order_id) > 5
-ORDER BY order_count DESC
+ORDER BY order_count DESC;
