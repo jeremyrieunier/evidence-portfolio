@@ -29,7 +29,7 @@ orders_distribution AS (
       WHEN total_orders <= 100 THEN '51-100'
       WHEN total_orders <= 500 THEN '101-500'
       ELSE '500+'
-    END as order_bucket,
+    END as order_bucket
   FROM merchant_orders
 )
 
@@ -37,7 +37,7 @@ SELECT
   order_bucket,
   COUNT(merchant_id) AS merchant_count,
   SUM(total_revenue) AS merchant_revenue,
-  COUNT(*) / SUM(COUNT(*)) OVER() AS percent_of_merchants
+  CAST(COUNT(*) AS FLOAT) / SUM(COUNT(*)) OVER() AS percent_of_merchants
 FROM orders_distribution
 GROUP BY order_bucket
 ORDER BY 

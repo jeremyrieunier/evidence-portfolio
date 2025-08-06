@@ -1,6 +1,6 @@
 WITH orders AS (
   SELECT
-    DISTINCT(order_id) AS order_id,
+    DISTINCT order_id,
     order_dt,
     address_to_country,
     shipment_carrier,
@@ -13,8 +13,8 @@ WITH orders AS (
 SELECT
     shipment_carrier,
     COUNT(DISTINCT order_id) AS total_orders,
-    COUNT(DISTINCT order_id) / SUM(COUNT(DISTINCT order_id)) OVER() AS percent_total_orders,
-    COUNT(DISTINCT address_to_country) AS countries_served,
+    CAST(COUNT(DISTINCT order_id) AS FLOAT) / SUM(COUNT(DISTINCT order_id)) OVER() AS percent_total_orders,
+    COUNT(DISTINCT address_to_country) AS countries_served
 FROM orders
 WHERE shipment_carrier IS NOT NULL
 GROUP BY shipment_carrier

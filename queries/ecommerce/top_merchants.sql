@@ -45,7 +45,7 @@ percentile_summary AS (
 SELECT 
   percentile,
   SUM(bucket_revenue) OVER (ORDER BY percentile) AS cumulative_revenue,
-  SUM(bucket_revenue) OVER (ORDER BY percentile) / total_revenue_all AS cumulative_revenue_percent,
+  CAST(SUM(bucket_revenue) OVER (ORDER BY percentile) AS FLOAT) / total_revenue_all AS cumulative_revenue_percent,
   min_revenue,
   max_revenue,
   avg_revenue

@@ -6,7 +6,6 @@ WITH orders AS (
     merchant_registered_dt,
     address_to_country,
     sales_channel_type_id,
-    merchant_registered_dt,
     sub_is_active_flag,
     sub_plan
   FROM ecommerce.orders
@@ -32,29 +31,50 @@ successful_merchants AS (
   FROM merchant_revenue
 ),
 
-merchant_metrics AS (
+-- Separate order-level metrics to avoid multiplication
+order_metrics AS (
   SELECT 
     s.merchant_id,
     s.merchant_tier,
-    MAX(CASE WHEN o.sub_is_active_flag = 1 THEN 1 ELSE 0 END) as has_active_subscription,
-
-
-    COUNT(DISTINCT o.order_id) / 6.0 as avg_monthly_orders,
-    COUNT(DISTINCT o.address_to_country) as countries_served,
-    COUNT(DISTINCT o.sales_channel_type_id) as sales_channel_count,
-    COUNT(DISTINCT l.product_type) as product_types_count,
-    COUNT(DISTINCT l.print_provider_id) as print_providers_count,
-    AVG(o.total_cost) as avg_order_value,
-    SUM(l.quantity) / COUNT(DISTINCT o.order_id) as avg_items_per_order,
+    MAX(CASE WHEN o.sub_is_active_flag = 1 THEN 1 ELSE 0 END) AS has_active_subscription,
+    COUNT(DISTINCT o.order_id) / 6.0 AS avg_monthly_orders,
+    COUNT(DISTINCT o.address_to_country) AS countries_served,
+    COUNT(DISTINCT o.sales_channel_type_id) AS sales_channel_count,
+    AVG(o.total_cost) AS avg_order_value
   FROM orders o
   JOIN successful_merchants s
     ON o.merchant_id = s.merchant_id
-  JOIN ecommerce.line_items l 
-    ON o.order_id = l.order_id
   GROUP BY s.merchant_id, s.merchant_tier
+),
+
+-- Separate line-item metrics to avoid multiplication
+line_item_metrics AS (
+  SELECT 
+    s.merchant_id,
+    COUNT(DISTINCT l.product_type) AS product_types_count,
+    COUNT(DISTINCT l.print_provider_id) as print_providers_count,
+    CAST(SUM(l.quantity) AS FLOAT) / COUNT(DISTINCT o.order_id) AS avg_items_per_order
+  FROM orders o
+  JOIN successful_merchants s
+    ON o.merchant_id = s.merchant_id
+  JOIN ecommerce.line_items l
+    ON o.order_id = l.order_id
+  GROUP BY s.merchant_id
+),
+
+merchant_metrics AS (
+  SELECT 
+    om.*,
+    lm.product_types_count,
+    lm.print_providers_count,
+    lm.avg_items_per_order
+  FROM order_metrics om
+  LEFT JOIN line_item_metrics lm
+    ON om.merchant_id = lm.merchant_id
 )
 
-SELECT -- Duckdb
+-- Duckdb things
+SELECT 
  unnest([
    'merchant_count',
    'avg_monthly_orders', 
