@@ -30,7 +30,7 @@ With 16 campaigns targeting various customer segments and a goal to scale from $
 # Executive Summary
 Outbound alone can generate $589K-$1.15M additional ARR (8-16% of $7M growth target), requiring a balanced acquisition mix to reach $10M ARR goal.
 
-## Key Ingishts
+## Key Insights
 
 ### Clear Performance Hierarchy Identified
 <BubbleChart

@@ -192,7 +192,7 @@ While all age groups prioritize flexibility, younger travelers show highest pric
 ```sql
 SELECT
   CASE
-    WHEN res.age_group = 0 THEN 'Unknowm'
+    WHEN res.age_group = 0 THEN 'Unknown'
     WHEN res.age_group = 25 THEN '0-25'
     WHEN res.age_group = 35 THEN '25-35'
     WHEN res.age_group = 45 THEN '35-45'
@@ -455,7 +455,7 @@ ORDER BY total_booking DESC
 
 
 ## By Gender
-There's a consistent low adoption accross genders:
+There's a consistent low adoption across genders:
 
 <BarChart 
     data={hotel_online_checkin_by_gender}
@@ -595,7 +595,7 @@ ORDER BY avg_night_revenue_per_occupied_capacity DESC;
     chartAreaHeight=350
 />
 
- - Male OTAs and Male OTA Nette appear as the largest bubbles in the high-volume, high-profitability quadrant.
+ - Male OTAs and Male OTA Netto appear as the largest bubbles in the high-volume, high-profitability quadrant.
  - Female guests consistently outperform across all business segments despite representing smaller booking volumes.
  - Unknown segments systematically underperform, particularly in FIT and Film channels.
 

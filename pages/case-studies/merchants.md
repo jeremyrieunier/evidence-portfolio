@@ -27,7 +27,7 @@ We excluded merchants with ≤10 orders from our analysis for the following reas
 - Analytical Integrity: Including dormant accounts would make our "successful merchant" analysis meaningless
 - Sample Quality: Focusing on 3,471 active merchants provides cleaner, more actionable insights
 
-### Sucess Definition
+### Success Definition
 The analysis reveals a classic power law distribution with a hockey stick curve:
 
 <BarChart 

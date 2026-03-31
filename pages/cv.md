@@ -14,7 +14,7 @@ hide_breadcrumbs: true
 
 ## Experience
 ### Product Data Analyst · [Sesame HR](https://www.sesamehr.com/)
-*Jun. 2023 - Sep 2024 · Valencia, Spain*
+*Jun. 2023 - Sep. 2024 · Valencia, Spain*
 
 Established product analytics capabilities for an HR SaaS company.
 - Trained product teams on the North Star Metric framework and collaboratively built metric trees for 20+ product features, defining critical user journeys and success metrics.
@@ -73,7 +73,7 @@ Built data pipelines connecting financial and product analytics systems for comp
 ### Customer Lifetime Value Analysis Framework
 Developed a customer lifetime value analysis framework using Python to model and visualise revenue patterns over time.
 - Implemented exponential decay regression modelling to quantify how customer value evolves over time, enabling more accurate revenue forecasting.
-- Created cohort analysis visualisations tracking multiple customer segments across various months, revealing distinct retention patterns
+- Created cohort analysis visualisations tracking multiple customer segments across various months, revealing distinct retention patterns.
 - Built interactive time series visualisations comparing new vs. returning revenue over time, uncovering seasonal patterns and growth trends.
 
 ## Education 

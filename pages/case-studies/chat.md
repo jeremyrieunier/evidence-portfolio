@@ -78,7 +78,7 @@ There's however a communication gap that represents a clear opportunity for impr
     
 />
 
-<Details title="SQL query used for thr north star metric analysis">
+<Details title="SQL query used for the north star metric analysis">
 
 ```sql
 WITH messages_from_doctors AS (
@@ -129,7 +129,7 @@ Analysis of weekly chat usage reveals that while the feature has gained traction
 - **Stable engagement**: Despite the total doctor base growing from 30,530 to 31,818 over these 10 weeks, the percentage of active users remained relatively stable, suggesting successful onboarding of new doctors to the feature.
 
 ## Initial Observations
-- **Adoption oppportunity**: With 1 in 4 doctors using chat weekly, there is significant potential to expand usage across the platform.
+- **Adoption opportunity**: With 1 in 4 doctors using chat weekly, there is significant potential to expand usage across the platform.
 - **Consistency**: The stability of weekly usage suggests the feature has found a core user base but may need enhancements to appeal to a broader audience.
 
 To better understand usage patterns, we'll next examine how chat adoption varies across different doctor specializations, which will help identify targeted growth opportunities.
@@ -208,7 +208,7 @@ Now that we understand the overall weekly usage rate, the next analysis examines
 
 ## Key Insights
 - **Wide usage variation**: Chat usage rates range dramatically across specializations, from as low as 8.7% (Radiology) to as high as 74.0% (Proctology), with an overall average of 60.2%.
-- **Practice pattern influence**: Specializations requiring ongoing patient relationships (Endocrinology 73.5%, Obsterics and Gyneacology 70.7%) show much higher usage than those focused on one-time diagnostics (Radiology 8.7%).
+- **Practice pattern influence**: Specializations requiring ongoing patient relationships (Endocrinology 73.5%, Obstetrics and Gynaecology 70.7%) show much higher usage than those focused on one-time diagnostics (Radiology 8.7%).
 
 ### High-impact Specializations
 Several large specializations show both high adoption and strong booking performance:

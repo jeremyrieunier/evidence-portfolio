@@ -178,7 +178,7 @@ WHERE service_name = 'IC'
 - September to October: +28% increase (0.43% to 0.55%)
 - November to December: +11% increase (0.57% to 0.63%)
 
-In term of impact:
+In terms of impact:
 
 - Total IC customers churned: 206 over 5 months
 - December alone: 52 customers (highest monthly loss)
@@ -406,7 +406,7 @@ ORDER BY month
 />
 
 - The Contractor business unit is volatile. Exceptional August (107%), near-flat September (100.84%), then stabilized around 102.5%:
-- On the other hand the EOR business units has a steady decline from 102.40% to 101.57%. It is more predictable but consistently weakening.
+- On the other hand the EOR business unit has a steady decline from 102.40% to 101.57%. It is more predictable but consistently weakening.
 
 <Details title="SQL query used for the Business Unit NRR analysis">
 
@@ -464,7 +464,7 @@ ORDER BY month, business_unit
 </Details>
 
 ## Regional NRR Performance
-### AMS performances are on the decline with a barely positive expansion
+### AMS performance is on the decline with a barely positive expansion
 
 ```sql nrr_ams
 SELECT *
@@ -482,7 +482,7 @@ WHERE region = 'AMS'
     lineWidth=4
 />
 
-### EMEA follow a similar pattern with a gradual decline
+### EMEA follows a similar pattern with a gradual decline
 
 ```sql nrr_emea
 SELECT *
