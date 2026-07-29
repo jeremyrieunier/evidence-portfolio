@@ -7,11 +7,11 @@ sidebar: show
 
 <img src="https://avatars.githubusercontent.com/jeremyrieunier" alt="Jeremy Rieunier" class="rounded-full w-36 h-36 mb-4">
 
-# Hi 👋 I'm Jeremy
+# Hola, I'm Jeremy
 
-I'm a data practitioner based in sunny Valencia 🇪🇸. I work with ecommerce and SaaS companies, helping them build analytics capabilities, train teams, and use data to drive meaningful business decisions.
+I'm a data analyst at [Mews](https://www.mews.com/), a hotel management platform, where I work across data, analytics engineering and commercial impact. All from sunny Valencia 🇪🇸.
 
-Before that, I ran my own CRM and analytics consultancy for 7 years, helping DTC Shopify stores understand their customers better.
+Before that, I ran my own CRM and analytics consultancy for 7 years, helping direct-to-consumer Shopify stores understand their customers better.
 
 I'm also a lifelong st-st-stutterer with le best frrrench 🇫🇷 accent ever.
 
@@ -35,7 +35,7 @@ Analyzed customer retention trends for a SaaS workforce management platform. Ide
 ---
 
 ## How I built this website
-This website is built with [Evidence](https://evidence.dev/). Everything is published on GitHub ([here's the repo](https://github.com/jeremyrieunier/evidence-portfolio)) and then deployed with [Vercel](https://vercel.com/). 
+This website is built with [Evidence](https://evidence.dev/). Everything is published on GitHub ([here's the repo](https://github.com/jeremyrieunier/jeremyrieunier.com)) and then deployed with [Vercel](https://vercel.com/). 
 
 The design is inspired by the [Panic theme for Logseq](https://github.com/kirso/logseq-panic-theme), created by [Kirill So](https://www.kirillso.com/).
 
