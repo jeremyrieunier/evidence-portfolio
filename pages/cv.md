@@ -13,6 +13,16 @@ hide_breadcrumbs: true
 
 
 ## Experience
+### Data Analyst · [Mews](https://www.mews.com/)
+*Sep. 2025 - Present · Remote*
+
+Building the data layer behind product-led growth for a hospitality management platform.
+- Built a revenue-per-area benchmark suite (m² and ft²) that positions ~6,500 hotels against their peer group, forming the analytical backbone of the company-wide product-led growth programme.
+- Owned 15+ dbt models end to end, covering area-normalised benchmarks, point-in-time snapshots, and peer-group segmentation, with strict attention to currency-comparable metrics.
+- Operationalised the benchmarks into the customer success platform, feeding product-qualified lead (PQL) scoring and in-product growth campaigns.
+- Closed the loop from models to consumption, building and maintaining data products that turn benchmarks into stakeholder-facing insights.
+- Built internal tooling and documentation in Hex, including AI and LLM context assets, to speed up the data team's workflows and make analyses reproducible.
+
 ### Product Data Analyst · [Sesame HR](https://www.sesamehr.com/)
 *Jun. 2023 - Sep. 2024 · Valencia, Spain*
 
@@ -82,8 +92,8 @@ Developed a customer lifetime value analysis framework using Python to model and
 
 ## Languages & Skills
 - **Languages**: Native French, bilingual in English and Spanish.
-- **SQL & Databases**: BigQuery, PostgreSQL.
-- **BI & Visualisation**: Looker, Metabase, Amplitude.
+- **SQL & Databases**: Databricks, BigQuery, PostgreSQL.
+- **BI & Visualisation**: Hex, Looker, Metabase, Amplitude.
 - **ETL/ELT & Data Pipelines**: Fivetran, Stitch, Segment.
 - **Data Modelling**: dbt, medallion architecture, dimensional modelling, metrics definition.
 - **Programming**: Python (pandas, NumPy, scikit-learn, Prophet), JavaScript, Google Apps Script, Git.
