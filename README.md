@@ -7,7 +7,6 @@ A personal portfolio showcasing data analysis and analytics engineering case stu
 - **Hotel Reservation Analysis** — Analyzed booking patterns across 2,500+ reservations to optimize revenue and digital services
 - **Outbound Campaign Analysis** — Evaluated 16 outbound campaigns to identify $589K–$1.15M ARR scaling potential
 - **Retention Analysis** — Diagnosed doubling churn rate concentrated in IC services and AMS/EMEA regions
-- **Merchants Analysis** — Identified characteristics of top-performing merchants on an e-commerce platform
 
 ## Tech Stack
 - [Evidence](https://evidence.dev/) — SQL-based data app framework
