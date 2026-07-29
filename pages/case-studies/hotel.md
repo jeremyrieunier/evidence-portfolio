@@ -55,7 +55,7 @@ Key questions included:
 ---
 
 # Assumptions and Limitations
-- All reservation states included: Analysis includes cancelled reservations under the assumption that booking intent existed regardless of cancellation reason
+- All reservation states included: Analysis includes canceled reservations under the assumption that booking intent existed regardless of cancellation reason
 - No duplicate validation performed: Assumes dataset has been pre-cleaned by data platform/engineering team with no booking ID duplicates
 - Nationality analysis limited: Only included countries with 40+ bookings for reliability
 

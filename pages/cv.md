@@ -17,9 +17,9 @@ hide_breadcrumbs: true
 *Sep. 2025 - Present · Remote*
 
 Building the data layer behind product-led growth for a hospitality management platform.
-- Built a revenue-per-area benchmark suite (m² and ft²) that positions ~6,500 hotels against their peer group, forming the analytical backbone of the company-wide product-led growth programme.
-- Owned 15+ dbt models end to end, covering area-normalised benchmarks, point-in-time snapshots, and peer-group segmentation, with strict attention to currency-comparable metrics.
-- Operationalised the benchmarks into the customer success platform, feeding product-qualified lead (PQL) scoring and in-product growth campaigns.
+- Built a revenue-per-area benchmark suite (m² and ft²) that positions ~6,500 hotels against their peer group, forming the analytical backbone of the company-wide product-led growth program.
+- Owned 15+ dbt models end to end, covering area-normalized benchmarks, point-in-time snapshots, and peer-group segmentation, with strict attention to currency-comparable metrics.
+- Operationalized the benchmarks into the customer success platform, feeding product-qualified lead (PQL) scoring and in-product growth campaigns.
 - Closed the loop from models to consumption, building and maintaining data products that turn benchmarks into stakeholder-facing insights.
 - Built internal tooling and documentation in Hex, including AI and LLM context assets, to speed up the data team's workflows and make analyses reproducible.
 
@@ -28,9 +28,9 @@ Building the data layer behind product-led growth for a hospitality management p
 
 Established product analytics capabilities for an HR SaaS company.
 - Trained product teams on the North Star Metric framework and collaboratively built metric trees for 20+ product features, defining critical user journeys and success metrics.
-- Built a data platform that extracts data from PostgreSQL production databases into BigQuery, implements medallion architecture in dbt, and connects to Metabase for self-service visualisation.
+- Built a data platform that extracts data from PostgreSQL production databases into BigQuery, implements medallion architecture in dbt, and connects to Metabase for self-service visualization.
 - Defined event tracking taxonomy and data contracts on ClickUp, partnering with engineers to ensure consistent implementation across the product and maintain data integrity.
-- Conducted in-depth product analyses using SQL and Amplitude, performing cohort, funnel, and retention studies that revealed key adoption barriers and guided feature prioritisation decisions.
+- Conducted in-depth product analyses using SQL and Amplitude, performing cohort, funnel, and retention studies that revealed key adoption barriers and guided feature prioritization decisions.
 - Mentored product managers and designers on self-serve analytics tools, increasing team's analytics adoption by 150% and reducing ad-hoc requests by 60% in 8 weeks.
 
 ### Analytics Engineer Consultant
@@ -43,8 +43,8 @@ Implemented data infrastructures and tracking plans for ecommerce SaaS businesse
 ### Customer Analytics Consultant · [Dealwithgrowth](https://dealwithgrowth.com/)
 *Nov. 2018 - Dec. 2022 · Remote*
 
-Operated an analytics consultancy helping CPG and beauty brands optimise activation and retention strategies.
-- Architected end-to-end data infrastructures using Google Cloud Platform, implementing ELT pipelines with Stitch/Fivetran, transformation with dbt, and visualisation layers with Looker to enable comprehensive ecommerce analytics.
+Operated an analytics consultancy helping CPG and beauty brands optimize activation and retention strategies.
+- Architected end-to-end data infrastructures using Google Cloud Platform, implementing ELT pipelines with Stitch/Fivetran, transformation with dbt, and visualization layers with Looker to enable comprehensive ecommerce analytics.
 - Designed modular data models in BigQuery that enabled advanced customer analysis, including cohort retention, RFM segmentation, and purchase pattern identification, revealing key drivers of lifetime value.
 - Implemented customer feedback systems combining post-purchase surveys with Python-based NLP analysis, transforming qualitative feedback into quantifiable insights that informed messaging, positioning, and product development priorities.
 - Developed predictive models based on historical purchase data, enabling proactive CRM campaign planning that addressed forecasted performance gaps and ensured achievement of revenue targets.
@@ -53,17 +53,17 @@ Operated an analytics consultancy helping CPG and beauty brands optimise activat
 *May 2016 - Nov. 2018 · Remote*
 
 Provided growth marketing strategies for lifestyle DTC brands on Shopify.
-- Architected tracking solutions using Segment, Google Tag Manager, and Google Analytics, creating centralised data collection systems that improved attribution accuracy and unified cross-channel customer journey data.
+- Architected tracking solutions using Segment, Google Tag Manager, and Google Analytics, creating centralized data collection systems that improved attribution accuracy and unified cross-channel customer journey data.
 - Designed custom attribution models in Google Sheets that provided clients with accurate ROAS calculations, enabling more efficient allocation of marketing budgets across channels.
-- Developed lifecycle email automation strategies using Klaviyo, driving up to 20% of monthly revenue through targeted behavioural triggers and engagement-based segmentation.
+- Developed lifecycle email automation strategies using Klaviyo, driving up to 20% of monthly revenue through targeted behavioral triggers and engagement-based segmentation.
 
 ### Growth Marketing Manager · [SPOKE](https://spoke-london.com/)
 *Jan. 2015 - May 2016 · London, UK*
 
 Led customer acquisition, CRM, and analytics for an ecommerce menswear brand.
-- Implemented cross-platform tracking using Google Analytics and JavaScript, creating a unified view of the customer journey from acquisition channels through post-purchase behaviours.
+- Implemented cross-platform tracking using Google Analytics and JavaScript, creating a unified view of the customer journey from acquisition channels through post-purchase behaviors.
 - Developed automated dashboards in Google Sheets using Zapier for data ingestion and Google Apps Script for transformation, improving decision-making and reducing reporting time.
-- Enhanced customer activation by integrating Klaviyo's JS API with SPOKE's fit finder quiz, enabling personalised product recommendations that increased conversion rates by 15% and improved first-time buyer experience.
+- Enhanced customer activation by integrating Klaviyo's JS API with SPOKE's fit finder quiz, enabling personalized product recommendations that increased conversion rates by 15% and improved first-time buyer experience.
 
 ## Selected Data Projects
 ### End-to-End Product Analytics Infrastructure
@@ -71,20 +71,20 @@ Established a product analytics infrastructure for measuring performance across 
 - Applied the North Star metrics framework across features, defining key success metrics and creating measurement alignment between product, engineering, and executive teams.
 - Collaborated with DevOps to build ETL/ELT pipelines that extract data from PostgreSQL production databases and third-party platforms (Swann and Chargebee) to BigQuery.
 - Implemented medallion architecture in dbt to transform raw data into analysis-ready datasets, with proper data quality testing and documentation.
-- Created self-serve dashboards that enable product teams to identify adoption barriers and optimisation opportunities.
+- Created self-serve dashboards that enable product teams to identify adoption barriers and optimization opportunities.
 
 ### Subscription Analytics Data Pipeline
 Built data pipelines connecting financial and product analytics systems for comprehensive subscription performance analysis.
 - Used Fivetran to extract Stripe subscription data into BigQuery, ensuring reliable capture of payment events, plan changes, and customer lifecycle transitions.
-- Developed modular dbt models that transform raw Stripe transactions into standardised event streams compatible with Amplitude's event schema.
+- Developed modular dbt models that transform raw Stripe transactions into standardized event streams compatible with Amplitude's event schema.
 - Built custom metrics in dbt that calculate key subscription indicators, including MRR movement, customer lifetime value, and retention cohorts.
-- Synchronised transformed events and metrics back to Amplitude, enabling product teams to analyse correlations between feature usage patterns and subscription outcomes.
+- Synchronized transformed events and metrics back to Amplitude, enabling product teams to analyze correlations between feature usage patterns and subscription outcomes.
 
 ### Customer Lifetime Value Analysis Framework
-Developed a customer lifetime value analysis framework using Python to model and visualise revenue patterns over time.
-- Implemented exponential decay regression modelling to quantify how customer value evolves over time, enabling more accurate revenue forecasting.
-- Created cohort analysis visualisations tracking multiple customer segments across various months, revealing distinct retention patterns.
-- Built interactive time series visualisations comparing new vs. returning revenue over time, uncovering seasonal patterns and growth trends.
+Developed a customer lifetime value analysis framework using Python to model and visualize revenue patterns over time.
+- Implemented exponential decay regression modeling to quantify how customer value evolves over time, enabling more accurate revenue forecasting.
+- Created cohort analysis visualizations tracking multiple customer segments across various months, revealing distinct retention patterns.
+- Built interactive time series visualizations comparing new vs. returning revenue over time, uncovering seasonal patterns and growth trends.
 
 ## Education 
 ### Master's Degree, Business Administration & Management
@@ -93,7 +93,7 @@ Developed a customer lifetime value analysis framework using Python to model and
 ## Languages & Skills
 - **Languages**: Native French, bilingual in English and Spanish.
 - **SQL & Databases**: Databricks, BigQuery, PostgreSQL.
-- **BI & Visualisation**: Hex, Looker, Metabase, Amplitude.
+- **BI & Visualization**: Hex, Looker, Metabase, Amplitude.
 - **ETL/ELT & Data Pipelines**: Fivetran, Stitch, Segment.
-- **Data Modelling**: dbt, medallion architecture, dimensional modelling, metrics definition.
+- **Data Modeling**: dbt, medallion architecture, dimensional modeling, metrics definition.
 - **Programming**: Python (pandas, NumPy, scikit-learn, Prophet), JavaScript, Google Apps Script, Git.
